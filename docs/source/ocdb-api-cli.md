@@ -2,7 +2,7 @@
 
 Automation and easy access is important. The OCDB database system does,
 therefore,
-offer a python command line interface as well as a Python API to access
+offer a python command line interface as well as a Python API for accessing
 as well as manage submissions and users. 
 
 
