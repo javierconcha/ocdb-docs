@@ -21,15 +21,15 @@ and also allows chaining.
 
 Please refer to the search chapter in OCDB Command Line Client and Python API section, for more details around the Lucene search syntax.
 
-###Set region
-![advanced](static/webui/select_region.png)
+### Set region
+![advanced](docs/source/static/webui/select_region.png)
 
-###Advanced options
+### Advanced options
 In adavnced options menu, you can set wavelength options, water depth thresholds, whether to include or not measurements taken in optically shallow waters, and single products. 
-![advanced](static/webui/advanced_options.png)
+![advanced](docs/source/static/webui/advanced_options.png)
 
-###Save search
-![advanced](static/webui/save_search.png)
+### Save search
+![advanced](docs/source/static/webui/save_search.png)
 
 
 
