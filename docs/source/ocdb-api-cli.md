@@ -41,6 +41,29 @@ __Windows__:
 activate ocdb
 ```
 
+Once that is done you can test whether it is is running by
+
+```bash
+ocdb-cli
+
+
+Usage: ocdb-cli [OPTIONS] COMMAND [ARGS]...
+
+  EUMETSAT Ocean Color In-Situ Database Client.
+
+Options:
+  --version       Show the version and exit.
+  --server <url>  OC-DB Server URL.
+  --help          Show this message and exit.
+
+Commands:
+  conf     Configuration management.
+  ds       Dataset management.
+  lic      Show license and exit.
+  sbm      Submission management.
+  sbmfile  Submission management.
+  user     User management.
+```
 
 ## Configure
 
