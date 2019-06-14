@@ -19,15 +19,19 @@ data fields provided by the submitter. This field also allows to use the
 so-called Lucene syntax which enables you to search for specific field values
 and also allows chaining.
 
-Please refer to the search chapter for more details around the Lucene search syntax.
+Please refer to the search chapter in OCDB Command Line Client and Python API section, for more details around the Lucene search syntax.
 
+###Set region
+![advanced](static/webui/select_region.png)
 
-
-
+###Advanced options
+In adavnced options menu, you can set wavelength options, water depth thresholds, whether to include or not measurements taken in optically shallow waters, and single products. 
 ![advanced](static/webui/advanced_options.png)
+
+###Save search
 ![advanced](static/webui/save_search.png)
 
-![advanced](static/webui/select_region.png)
+
 
 ## Submissions
 
