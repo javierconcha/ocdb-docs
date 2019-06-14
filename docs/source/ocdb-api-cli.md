@@ -18,6 +18,29 @@ To install the CLI and API, please use following steps.
     python setup.py install
 ```
 
+## How to start it
+
+The OCDB client has been installed in to a so-called conda environment. In 
+order to start it you will always have to activate that envrionment using the following command:
+
+__Linux__:
+
+```bash
+conda activate ocdb
+```
+
+or on older conda versions:
+
+```bash
+source activate ocdb
+```
+
+__Windows__:
+
+```bash
+activate ocdb
+```
+
 
 ## Configure
 
