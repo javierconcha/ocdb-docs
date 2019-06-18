@@ -21,6 +21,7 @@ The Copernicus OCDB_
    ocdb-valication-config
    ocdb-rest
    ocdb-data-access-policy
+   ocdb-MDB_user_manual
    ocdb-tech-docs
    ocdb-tech-deployment
    ocdb-training
