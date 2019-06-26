@@ -1,21 +1,21 @@
 # User Manual for the OCDB WebUI
 
-The aim of the Copernicus Ocean Colour Database (OCDB) is to provide a platform to publish
-ocean colour related _in-situ_ measurements. This tool enables researchers to store in a organised Database
-their own _in-situ_ data, in a standard format (to guarantee interoperavility [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format) is used). 
+The aim of the __Copernicus Ocean Colour Database (OCDB)__ is to provide a platform to collect, organize and make available to ocean colour community ocean colour related _in-situ_ measurements, useful for satellite derived ocean colour products validation and algorithm development. 
+This tool enables researchers to store in a organised Database their own _in-situ_ data, in a standard format (to guarantee interoperavility [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format) is used). 
 
-The main features of the OCDB database system are the provision of the data to the research
-community with an enhanced search facility. 
-__Quality check__ on format, measurements as well as on protocols complience will be performed, and a quality flag provided for each measurement. 
-__Only when agreed__, data will be __published__ in the Database and made available to any user cean colour related _in-situ_ measurements.  
+The main features of the OCDB database system are the provision of the data to the research community with an enhanced search facility. 
+__Quality check__ on format, measurements as well as on protocols complience is performed, and a quality flag is provided for each measurement. 
+__Only when agreed__, _in-situ_ measurements are __published__ in the Database and made available to the public.  
+
 Published, best quality data will be used to generate __Matchup files__ with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
-In addition, if interested, registered users will be able to ask for the generation of matchup files Sentinel-3 Level 2 Ocean Colour OLCI A and B for data submitted.  
+In addition, when interested, registered users will be able to ask for the generation of matchup files Sentinel-3 Level 2 Ocean Colour OLCI A and B for their own submitted data.
 
 ## Search
 
-All data the submitter has agreed to publish is searchable for the public. 
-The OCDB WebUI offers a search interface. The main feature of that interface is the search text field.
-Users can enter a single keyword which will attempt to find data using the meta
+Any data the submitter has agreed to publish is searchable for the public. 
+The OCDB WebUI offers a _Search_ interface. 
+Data can be searched by acquisition date, product groups (listed ) and a _Search_ text field.
+In the text Users can enter a single keyword which will attempt to find data using the meta
 data fields provided by the submitter. This field also allows to use the
 so-called Lucene syntax which enables you to search for specific field values
 and also allows chaining.
