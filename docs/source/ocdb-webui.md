@@ -1,20 +1,21 @@
 # User Manual for the OCDB WebUI
 
-The aim of the Copernicus Ocean Colour Databas (OCDB) is to provide a platform to publish
-ocean related _in-situ_ measurements. This tool enables researchers to upload
-their own _in-situ_ data using the the [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format). 
+The aim of the Copernicus Ocean Colour Database (OCDB) is to provide a platform to publish
+ocean colour related _in-situ_ measurements. This tool enables researchers to store in a organised Database
+their own _in-situ_ data, in a standard format (to guarantee interoperavility [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format) is used). 
 
 The main features of the OCDB database system are the provision of the data to the research
-community with an enhanced search facility. Further, data that is uploaded by
-the researchers will automatically validated during the upload process which includes
-a report on the validation result. The researcher also keeps full control over
-the submission and publication process.     
+community with an enhanced search facility. 
+__Quality check__ on format, measurements as well as on protocols complience will be performed, and a quality flag provided for each measurement. 
+__Only when agreed__, data will be __published__ in the Database and made available to any user cean colour related _in-situ_ measurements.  
+Published, best quality data will be used to generate __Matchup files__ with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
+In addition, if interested, registered users will be able to ask for the generation of matchup files Sentinel-3 Level 2 Ocean Colour OLCI A and B for data submitted.  
 
 ## Search
 
 All data the submitter has agreed to publish is searchable for the public. 
-The OCDB WebUI offers a search interface. Main feature of that interface is the search text field.
-You can enter a single keyword which will attempt to find data using the meta
+The OCDB WebUI offers a search interface. The main feature of that interface is the search text field.
+Users can enter a single keyword which will attempt to find data using the meta
 data fields provided by the submitter. This field also allows to use the
 so-called Lucene syntax which enables you to search for specific field values
 and also allows chaining.
@@ -29,6 +30,7 @@ Region for search can be set both either entering coordinates clicking on 'MANUA
 ### Advanced options
 
 In adavnced options menu, you can set wavelength options, water depth thresholds, whether to include or not measurements taken in optically shallow waters, and single products. 
+
 ![advanced](docs/source/static/webui/advanced_options.png)
 
 ### Save search
