@@ -1,1 +1,1 @@
-# Documentation for teh Copernicus Ocean Colour Database (OCDB)
+# Documentation for the Copernicus Ocean Colour Database (OCDB)
