@@ -14,11 +14,8 @@ In addition, when interested, registered users will be able to ask for the gener
 
 Any data the submitter has agreed to publish is searchable for the public. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed in 'Groups' section [here](ocdb-variables-list.md)) and a _Search_ text field.
-In the text Users can enter a single keyword which will attempt to find data using the meta
-data fields provided by the submitter. This field also allows to use the
-so-called Lucene syntax which enables you to search for specific field values
-and also allows chaining.
+Data can be searched by acquisition date, product groups (listed in 'Groups' section [here](ocdb-variables-list.md)) and a _Search_ text field. In the _Search_ text field Users can enter a single keyword which will attempt to find data using the meta
+data fields provided by the submitter. This field also allows to use the so-called Lucene syntax which enables you to search for specific field values and also allows chaining.
 
 Please refer to the search chapter in OCDB Command Line Client and Python API section, for more details around the Lucene search syntax.
 
@@ -29,31 +26,31 @@ Region for search can be set both either entering coordinates clicking on 'MANUA
 
 ### Advanced options
 
-In adavnced options menu, you can set wavelength options, water depth thresholds, whether to include or not measurements taken in optically shallow waters, and single products. 
+In adavnced options menu, __single products__ (listed in 'Variables' section [here](ocdb-variables-list.md)) can be selected, the wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold could also be set (when provided in metadata). Finally measurements taken in optically shallow waters van be either excluded or selected. 
 
 ![advanced](docs/source/static/webui/advanced_options.png)
 
 ### Save search
-Any query can be saved by any user, for replicating the same search in the features (search otpions are saved, not the results!). Click on save and assign a name to it.
+Any query can be saved by any user, for replicating the same search in the feature (search otpions are saved, not the results!). Clicking on _SAVE SEARCH_ and assigning a name to it. Search qyery can be edited and/or shared clicking on _<>_ button.
 
 ![advanced](docs/source/static/webui/save_search.png)
 
 ## Submissions
 
-In this section we describe how to submit data. We assume that you have a user 
-account and have logged in to the system. When clicking on the submission section a list of your submissions will appear including action buttons.
+In this section data submission process is described.
+Only registered users are allowed to submit data. Please contact ops@eumetsat.int to be registered. 
+Any registered user, after login in, can manage new and past submission in the _Submit_ page.
 
 ### New Submission
 
-If you want to add a new submission click on New Submission on the top right corner.
-A new dialog will open. Please add an identifier for your submission and a path
-where submissions files will be stored under. This will be used to i
+To add a __new submission__, click on _NEW SUBMISSION_ on the top right corner.
+A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path (_affiliation/experiment/cruise_)
+where submissions files will be stored under. The submissin label will univocally refers to a submission, while submission path could be the same for multiple submissions.
 
-When submitting data, you will be asked to provide a publication date. Leave this empty if you do not desire your data to be searchible. Otherwise, indicate
-what date you would like your data to be available to the public.
+Clicking on _Publish Data (Y)_ user agree in publishing the data right after the submission and quality check process. 
+Select a date in _Publication Date_ instaed to delay the publication of the data belonging to this submission or leave the field empty to not allow publication at all.
+Data for which publication is not agreed are ingested by the Database but accessible only to the Database administrators and the users. Publication agreement could be also provided anytime in the future.
 
-If you don't want the data to be published, tick 'publication' allowed. This 
-will be shown in the submission table to the administrators.   
 
 Once you initiate the submission by pushing "Submit" your data will be validated
 using plausibility and validation rules (link to rules).
