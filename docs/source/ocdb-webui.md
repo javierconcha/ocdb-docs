@@ -76,61 +76,57 @@ In _Submit_ page, any registered user, after login, can manage his own submissio
 
 Each submission is listed with its label, submission date, (if provided) publication date, publication agreement, submission status and available actions.
 
-![list](static/webui/list.png)
+(xx table image)
 
-__List Files__: ![list](docs/source/static/webui/list.png)
+__List Files__: 
 
-It shows a table of selected submission files. Actions are applicable for each file (see xx)
+![list](docs/source/static/webui/list.png)
+
+It shows a table of selected submission files. Actions are applicable for each file (see _Submission File Actions_ section below).
 
 ![list](docs/source/static/webui/list_ex.png)
 
 __Process Data__ (Admin users only):
 
-Before they are processed, validated data are still not visible in the Database to anyone. __Process Data__ allows to start the processing action, at the end of which the data will are searchable in the Database, but __ONLY__ to the submitting user and admins. 
 
 ![list](docs/source/static/webui/process.png)
 
-When pushing this button, the data will be processed into the database and, 
-therefore, available for searching ONLY for administrators and the submittor.
+Before they are processed, validated data are still not visible in the Database to anyone. __Process Data__ allows to start the processing action, at the end of which the data are searchable in the Database, but __ONLY__ by admin users and the owner of the data. 
 
-__Publish Data__:
+__Publish Data__ (Admin users only):
 
-__Publish Data__ will do exactly the same as __Process Data__, but will set
-the status of the data to __PUBLISHED__ and is, therefore, visible and
-downloadable by the public. The publishing process will check whether the
-data has been processed already to avoid data duplication. 
+![list](docs/source/static/webui/publish.png)
 
-![list](static/webui/publish.png)
+With _Publish Data_ data are processed (if not processed yet) into the Database and the status of the data is set to __PUBLISHED__ and is, therefore, searchable by the public in the Database. The publishing process checks whether the data has been already processed, to avoid data duplication.
 
-__Delete Submission__:
+__Delete Submission__ (Admin users only):
 
-The whole submission will be deleted including processed/published data from the search database.
+![list](docs/source/static/webui/delete.png)
 
-![list](static/webui/delete.png)
+The whole submission is deleted, including processed/published data from the search database.
  
 __Halt Restart Submission__:
 
-![list](static/webui/play.png)
+![list](docs/source/static/webui/play.png)
 
-The user is able to halt a submission. This will denote the administrators that the
-user wished that the is __NOT__ to be processed. Once the process is halted, the user 
-can a __Restart__ button will appear. 
+The user is able to halt a submission. This will denote the administrators that the user wished that the submission is __NOT__ to be processed. Once the process is halted, a __Restart__ button will appear, and user can use it to comunicate submission can be now processed.
 
-__Cancel Submission__:
+__Cancel Submission__ (Admin users only):
 
-Cancelling the submission will delete the database entries linked to this submission.
+Cancelling the submission allows to delete the database entries linked to this submission, keeping submission files.
+This data can be anytime re-processed into the Database from the _Submit_ page.
 
-![list](static/webui/cancel.png)
+![list](docs/source/static/webui/cancel.png)
 
 ### Submission Statuses
 
-From the above actions the following statuses for submissions derive.
+Through the above actions, the following statuses for submissions can be set
 
-- Submitted
-- Validated
-- Cancelled
-- Processed
-- Published
+- __SUBMITTED__: submission xx
+- __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
+- __CANCELLED__: database entries linked to this submission have been canceled from the Database
+- __PROCESSED__: submission data are searchable in the Database by submission owner and admin users
+- __PUBLISHED__: submission data are searchable in the Database by anyone
 
 ### Submission File Actions
 
