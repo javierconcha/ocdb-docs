@@ -122,7 +122,7 @@ This data can be anytime re-processed into the Database from the _Submit_ page.
 
 Through the above actions, the following statuses for submissions can be set
 
-- __SUBMITTED__: submission xx
+- __SUBMITTED__: submission contains errors xx
 - __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
 - __CANCELLED__: database entries linked to this submission have been canceled from the Database
 - __PROCESSED__: submission data are searchable in the Database by submission owner and admin users
@@ -133,7 +133,7 @@ Through the above actions, the following statuses for submissions can be set
 When clicking on listing files for a submission the data and document
 files are listed. This new table provides the following actions:
 
-__List Validation Issues__:
+__List Import Issues__:
 
 List issues the system encountered when validating the data file.
 
@@ -147,23 +147,24 @@ Remove the file from the submission.
 
 __Download File__:
 
-Download the file if a changed to the submission file is required.
+Download the file if a change to the submission file is required.
 
 ![download](static/webui/download.png)
 
 
 __Upload File__:
 
-Reupload a new version of the file. The old one will be overwritten. The 
-validation will be re-run.
+Re-upload a new version of the file. The old one is overwritten. The validation is re-run.
 
 ![reupload](static/webui/upload.png)
 
 
 ### Submission File Statuses
 
-- ERROR
-- VALIDATED
-- WARNING
+For each file, the fllowing status can be set:
+
+- __ERROR__: there are errors in the format of the file
+- __WARNING__: there are warnings regarding the format of the file. 
+- __VALIDATED__: the file passed the format quality check
 
 
