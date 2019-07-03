@@ -60,8 +60,8 @@ Click on _List Files_ available among _Actions_ tools to see the results of the 
 
 ![list](docs/source/static/webui/list_ex.png)
 
-In case of errors or warnings, for each file, click on _List Import Issues_ ![list](static/webui/list.png) to show the list of errors and wornings messages.
-Single files can be thus download ![down](static/webui/down.png) and re-uploaded ![up](static/webui/up.png) and validated again.
+In case of errors or warnings, for each file, click on _List Import Issues_ ![list](docs/source/static/webui/list.png) to show the list of error and worning messages.
+Single files can be thus download ![down](docs/source/static/webui/down.png) and re-uploaded ![up](docs/source/static/webui/up.png) and validated again.
 
 In case of errors the status of the submission is set to _SUBMITTED_. Submissions containning errors, are note further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
@@ -75,8 +75,7 @@ The picture below, summurises the whole process for submission and data validati
 
 __List Submission Files__:
 
-Views a table of submissions files and enables you to apply actions (see
-chapter Submission File Actions). 
+Views a table of submissions files and enables you to apply actions (see chapter Submission File Actions). 
 
 ![list](static/webui/list.png)
 ![list](static/webui/submission_list.png)
