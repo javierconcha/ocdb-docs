@@ -8,13 +8,13 @@ __Quality check__ on format, measurements as well as on protocols complience is 
 __Only when agreed__, _in-situ_ measurements are __published__ in the Database and made available to the public.  
 
 Published, best quality data will be used to generate __Matchup files__ with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
-In addition, when interested, registered users will be able to ask for the generation of matchup files Sentinel-3 Level 2 Ocean Colour OLCI A and B for their own submitted data.
+In addition, when interested, registered users will be able to ask for the generation of matchup files for Sentinel-3 Level 2 Ocean Colour OLCI A and B for their own submitted data.
 
 ## Search
 
 Any data the submitter has agreed to publish is searchable for the public. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed ) and a _Search_ text field.
+Data can be searched by acquisition date, product groups (listed in 'Groups' section [here](ocdb-variables-list.md)) and a _Search_ text field.
 In the text Users can enter a single keyword which will attempt to find data using the meta
 data fields provided by the submitter. This field also allows to use the
 so-called Lucene syntax which enables you to search for specific field values
