@@ -47,24 +47,29 @@ To add a __new submission__, click on _NEW SUBMISSION_ on the top right corner.
 A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path (_affiliation/experiment/cruise_)
 where submissions files will be stored under. The submissin label will univocally refers to a submission, while submission path could be the same for multiple submissions.
 
+![submission](docs/source/static/webui/submission_dialog.png)
+
 Clicking on _Publish Data (Y)_ user agree in publishing the data right after the submission and quality check process. 
 Select a date in _Publication Date_ instaed to delay the publication of the data belonging to this submission or leave the field empty to not allow publication at all.
 Data for which publication is not agreed are ingested by the Database but accessible only to the Database administrators and the users. Publication agreement could be also provided anytime in the future.
 
+Drag and copy or Select measurement files and documentation in the dedicated windows. File format and documentation rquired are described [here](ocdb-submission-format.md).
+Click on _SUBMIT_ to initiate the validation process.
+Files containing measurments are immidiately automatically checked according to [validation rules](ocdb-validation-rules.md)
+Click on _List Files_ available among _Actions_ tools to see the results of the validation, shown for each file.
 
-Once you initiate the submission by pushing "Submit" your data will be validated
-using plausibility and validation rules (link to rules).
+![list](docs/source/static/webui/list_ex.png)
 
-If the validation succeeds, the status of your submission will be VALIDATED 
-otherwise SUBMITTED. If the system finds errors you can view them in the 
-submission file table by clicking 'list files' on the submission table item. 
+In case of errors or warnings, for each file, click on _List Import Issues_ ![list](static/webui/list.png) to show the list of errors and wornings messages.
+Single files can be thus download ![down](static/webui/down.png) and re-uploaded ![up](static/webui/up.png) and validated again.
 
+In case of errors the status of the submission is set to _SUBMITTED_. Submissions containning errors, are note further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
-![submission](static/webui/submission_dialog.png)
+If the validation succeeds, the status of the submission is set to _VALIDATED_ and further processed by Database administrators.
 
-![list](static/webui/submission_validation_results.png)
+The picture below, summurises the whole process for submission and data validation.
 
-![list](static/webui/submission_process.png)
+![list](docs/source/static/webui/submission_process.png)
 
 ### Submission Actions
 
