@@ -51,7 +51,7 @@ where submissions files will be stored under. The submissin label will univocall
 
 Clicking on _Publish Data (Y)_ user agree in publishing the data right after the submission and quality check process. 
 Select a date in _Publication Date_ instaed to delay the publication of the data belonging to this submission or leave the field empty to not allow publication at all.
-Data for which publication is not agreed are ingested by the Database but accessible only to the Database administrators and the users. Publication agreement could be also provided anytime in the future.
+Data for which publication is not agreed are ingested by the Database but accessible only to the Database administrators and the users. Publication agreement could be also provided anytime in the future, contacting ops@eumetsat.
 
 Drag and copy or Select measurement files and documentation in the dedicated windows. File format and documentation rquired are described [here](ocdb-submission-format.md).
 Click on _SUBMIT_ to initiate the validation process.
@@ -61,7 +61,7 @@ Click on _List Files_ available among _Actions_ tools to see the results of the 
 ![list](docs/source/static/webui/list_ex.png)
 
 In case of errors or warnings, for each file, click on _List Import Issues_ ![list](docs/source/static/webui/list.png) to show the list of error and worning messages.
-Single files can be thus download ![down](docs/source/static/webui/down.png) and re-uploaded ![up](docs/source/static/webui/up.png) and validated again.
+Single files can be thus download ![down](docs/source/static/webui/download.png) and re-uploaded ![up](docs/source/static/webui/upload.png) and validated again.
 
 In case of errors the status of the submission is set to _SUBMITTED_. Submissions containning errors, are note further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
@@ -71,22 +71,24 @@ The picture below, summurises the whole process for submission and data validati
 
 ![list](docs/source/static/webui/submission_process.png)
 
-### Submission Actions
+### Submission Actions 
+In _Submit_ page, any registered user, after login, can manage his own submissions and submission files.
 
-__List Submission Files__:
-
-Views a table of submissions files and enables you to apply actions (see chapter Submission File Actions). 
+Each submission is listed with its label, submission date, (if provided) publication date, publication agreement, submission status and available actions.
 
 ![list](static/webui/list.png)
-![list](static/webui/submission_list.png)
 
-__Process Data__:
+__List Files__: ![list](docs/source/static/webui/list.png)
 
-Until now, the data listed in the submission is not visible in the database.
-The button __Process Data__ will start the processing action. When finished,
-the data will be visible, burt __ONLY__ to the submitting user and admins. 
+It shows a table of selected submission files. Actions are applicable for each file (see xx)
 
-![list](static/webui/process.png)
+![list](docs/source/static/webui/list_ex.png)
+
+__Process Data__ (Admin users only):
+
+Before they are processed, validated data are still not visible in the Database to anyone. __Process Data__ allows to start the processing action, at the end of which the data will are searchable in the Database, but __ONLY__ to the submitting user and admins. 
+
+![list](docs/source/static/webui/process.png)
 
 When pushing this button, the data will be processed into the database and, 
 therefore, available for searching ONLY for administrators and the submittor.
