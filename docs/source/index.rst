@@ -32,4 +32,4 @@ The Copernicus OCDB_
 
 
 
-.. image:: static/logos.png
+.. image:: docs/source/static/webui/logos.png
