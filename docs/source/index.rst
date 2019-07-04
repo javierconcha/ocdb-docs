@@ -6,7 +6,7 @@
 Welcome to the Copernicus OCDB Database System (OCDB)!
 ================================
 
-The aim of the __Copernicus Ocean Colour Database (OCDB)__ is to provide a platform to collect, organize and make available to ocean colour community, ocean colour related _in-situ_ measurements, useful for satellite derived ocean colour products validation and algorithm development. 
+The aim of the Copernicus Ocean Colour Database (OCDB)_ is to provide a platform to collect, organize and make available to ocean colour community, ocean colour related _in-situ_ measurements, useful for satellite derived ocean colour products validation and algorithm development. 
 This tool enables researchers to store and eventually share into an organised Database their own _in-situ_ data, in a standardized format.
 
 
@@ -18,8 +18,8 @@ The Copernicus OCDB_
    :maxdepth: 2
    :caption: Contents:
 
-   ocdb-webui
-   ocdb-api-cli
+ocdb-webui
+ocdb-api-cli
    ocdb-search
    ocdb-validation-rules
    ocdb-valication-config
