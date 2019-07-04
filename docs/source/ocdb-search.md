@@ -39,8 +39,8 @@ single character wildcard. So the first example above returns all datasets with 
 __Operators AND/OR__:
 
 ```
-investigators: *Colleen* AND investigators: Helge
-investigators: *Colleen* OR investigators: Helge
+investigators: *Colleen* AND start_date: '2016-04-01'
+investigators: *Colleen* OR investigators: *Helge*
 ```
 
 These operators allow to combine conditions. As expected, the "AND" implements a logical AND, the "OR" represents the logical OR operation.
@@ -48,8 +48,8 @@ These operators allow to combine conditions. As expected, the "AND" implements a
 __Operators Lower/Greater Than__:
 
 ```
-investigators: >Colleen
-investigators: <Colleen
+water_depth: > 10
+water_depth: < 10
 ```
 
 Allows to search for datasets where a field is greater that or smaller than a reference. For number fields the functionality is obvious. 
