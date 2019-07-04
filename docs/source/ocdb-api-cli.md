@@ -82,7 +82,7 @@ ocdb-cli cond server_url [some url]
 
 python:
 ```python
-from ocdb_client.api.OCDBApi import new_api
+from ocdb.api.OCDBApi import new_api
 
 api = new_api()
 
@@ -151,12 +151,12 @@ __Possible fields are__:
 - __data_type__: The data type (e.g. scan)
 - __documents__: Comma separated list of uploaded supplementary documents
 - __data_status__: e.g. final
-- __start_date__: Start of measurements,
-- __end_date__: End of measurements
-- __water_depth__: Water depths during measurement
-- __measurement_depth__: Measurement depth
+- __start_date__: Start of measurements (format: "yyyy-mm-dd")
+- __end_date__: End of measurements (format: "yyyy-mm-dd")
+- __water_depth__: Water depth at measurement point
+- __measurement_depth__: Measurement depth (in meters)
 - __secchi_depth__: Secchi depth
-- __missing__: Fill value
+- __missing__: Fill value for unvalid data
 - __delimiter__: Delimiter of data file e.g. tab
 - __units__: Comma separated list of units e.g. "nm,1/m,1/m"
 
