@@ -11,19 +11,14 @@ Considered the need for sustained access to in situ-Fiducial Reference Measureme
 
 This tool enables researchers to store and eventually share into an organised Database their own in-situ data, in a standardized format.
 
-         Go to the Copernicus OCDB_
-
 The Database has been designed in order to guarantee easy access to data, a strong search engine, high usability, easy data validation, interoperability with other Database (in particular NASA SeaBASS Database) and to be automatable and easy to deploy. For more information about Database system design visit xx.
+
+         Go to the Copernicus OCDB_
 
 OCDB User Manual 
 ==================================
-.. _OCDB: http://ocdb.eumetsat.int
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-ocdb-webui
+[ocdb-webui]('docs/source/ocdb-webui')
 ocdb-api-cli
    ocdb-search
    ocdb-validation-rules
@@ -40,5 +35,10 @@ ocdb-api-cli
 
 
 
+.. _OCDB: http://ocdb.eumetsat.int
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
 .. image:: docs/source/static/webui/logos.png
