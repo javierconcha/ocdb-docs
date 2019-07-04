@@ -76,8 +76,6 @@ In _Submit_ page, any registered user, after login, can manage his own submissio
 
 Each submission is listed with its label, submission date, (if provided) publication date, publication agreement, submission status and available actions.
 
-(xx table image)
-
 __List Files__: 
 
 ![list](docs/source/static/webui/list.png)
@@ -87,7 +85,6 @@ It shows a table of selected submission files. Actions are applicable for each f
 ![list](docs/source/static/webui/list_ex.png)
 
 __Process Data__ (Admin users only):
-
 
 ![list](docs/source/static/webui/process.png)
 
