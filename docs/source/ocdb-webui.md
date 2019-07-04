@@ -1,7 +1,7 @@
 # User Manual for the OCDB WebUI
 
 The aim of the __Copernicus Ocean Colour Database (OCDB)__ is to provide a platform to collect, organize and make available to ocean colour community ocean colour related _in-situ_ measurements, useful for satellite derived ocean colour products validation and algorithm development. 
-This tool enables researchers to store in a organised Database their own _in-situ_ data, in a standard format (to guarantee interoperavility [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format) is used). 
+This tool enables researchers to store in a organised Database their own _in-situ_ data, in a standard format (to guarantee interoperability [Seabass data format](https://earthdata.nasa.gov/esdis/eso/standards-and-references/ascii-file-format-guidelines-for-earth-science-data/seabass-data-file-format) is used). 
 
 The main features of the OCDB database system are the provision of the data to the research community with an enhanced search facility. 
 __Quality check__ on format, measurements as well as on protocols complience is performed, and a quality flag is provided for each measurement. 
