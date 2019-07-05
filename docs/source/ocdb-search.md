@@ -2,11 +2,11 @@
 
 All data the submittors have agreed to publish is searchable for the public. 
 The OCDB WebUI offers a graphical search interface. Main feature of this interface is the search text field.
-You can enter a single keyword which will attempt to find data using the meta
-data fields provided by the submittor. This field also allows to use the
-so-called Lucene syntax which enables you to search for specific field values
-and also allows chaining. A concise description of the full Lucene query language syntax can be found at 
-https://lucene.apache.org/core/2_9_4/queryparsersyntax.html. 
+Just entering any __word__ allows also querying the Database for anyfile containing that specific word.
+
+For example typing 'chl Rrs', all the files containing the world 'chl' or 'Rrs'.
+
+This field also allows using the so-called __Lucene syntax__ which enables you to search for specific field values and also allows chaining. A concise description of the full Lucene query language syntax can be found at https://lucene.apache.org/core/2_9_4/queryparsersyntax.html. 
 
 Please note that the OCDB system does not support the complete syntax.
 
