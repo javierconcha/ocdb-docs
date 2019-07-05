@@ -97,10 +97,19 @@ api.set(server_url="[some server url]")
 ## Search Database with the Python API
 
 The function 'find_datasets' allow to query the Database for several information, using different keywords:
-__expr__: look for ay files containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
-__region__:
-'region': None, 'time': None, 'wdepth': None, 'mtype': 'all', 'shallow': 'no', 'pmode': 'contains', 'pgroup': None, 'status': None, 'submission_id': None, 'pname': None, 'geojson': True, 'offset': None, 'count': None, 'user_id': None}
-
+- __expr__: looks for any file containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
+- __region__:
+- __time__:
+- __wdepth__:
+- __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral
+- __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
+- __pmode__: 
+- __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Groups](ocdb-search.md#groups) section for the complete list
+- __pname__: looks for files containing only the specified variables. A complete list of queryable variables are avaialable [here](ocdb-standard-field-unit.md)
+- __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and and data owners) 
+- __submission_id__: looks for data submitted below the specified submission label
+- __geojson__: (Default is True)
+- __user_id__: look for data sumbmitted by the specified user (by username)
 
 
 ## Search Database with Lucene syntax
