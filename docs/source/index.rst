@@ -11,6 +11,11 @@ Considered the need for sustained access to in situ-Fiducial Reference Measureme
 
 This tool enables researchers to store and eventually share into an organised Database their own in-situ data, in a standardized format.
 
+Quality check on format, measurements as well as on protocols complience is performed, and a quality flag is provided for each measurement. 
+Only when agreed by the contributor, in-situ measurements are published into the Database and made available to the public.  
+
+Published, best quality data will be used to generate Match-up files with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
+
 The Database has been designed in order to guarantee easy access to data, a strong search engine, high usability, easy data validation, interoperability with other Database (in particular NASA SeaBASS Database) and to be automatable and easy to deploy. For more information about Database system design visit xx.
 
          Go to the Copernicus OCDB_
