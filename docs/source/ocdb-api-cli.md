@@ -99,7 +99,8 @@ api.set(server_url="[some server url]")
 The function 'find_datasets' allow to query the Database for several information, using different keywords:
 - __expr__: looks for any file containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
 - __region__:
-- __time__:
+- __start_time__: looks for any file containing measurement time later than the selected date (format: "2016-07-01")
+- __end_time__: looks for any file containing measurement time earlier than the selected date (format: "2019-07-01")
 - __wdepth__:
 - __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
