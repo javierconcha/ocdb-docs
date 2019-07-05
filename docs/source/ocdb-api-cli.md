@@ -97,13 +97,7 @@ api.set(server_url="[some server url]")
 
 ## Search Database
 
-
-The database can be searched using the so-called Lucene syntax (https://lucene.apache.org/core/2_9_4/queryparsersyntax.html). The Lucene
-syntax allows you to query specific fields and also allows to apply logic,
-chaining of queries, and using wild cards.
-
-The first example below for instance attempts to find data files
-that include the name *"Colleen"* in the investigators meta field.
+The first example below for instance attempts to find data files that include the name *"Colleen"* in the investigators meta field.
 
 
 bash:
@@ -135,31 +129,6 @@ api.find_datasets(expression="investigators:*Colleen*")
     },
     ...
 ```
-
-
-__Possible fields are__:
-
-- __path__: 
-- __received__: Date received
-- __identifier_product_doi__: Product DOI
-- __investigators__: Primary Investigators (PIs) of the experiment
-- __affiliations__: The affiliations of the PIs.
-- __contact__: Contact (email address) of the PIs.
-- __experiment__: Identifier of the experiment
-- __cruise__: Identifier of the cruise
-- __data_file_name__: The name of the original data file
-- __data_type__: The data type (e.g. scan)
-- __documents__: Comma separated list of uploaded supplementary documents
-- __data_status__: e.g. final
-- __start_date__: Start of measurements (format: "yyyy-mm-dd")
-- __end_date__: End of measurements (format: "yyyy-mm-dd")
-- __water_depth__: Water depth at measurement point
-- __measurement_depth__: Measurement depth (in meters)
-- __secchi_depth__: Secchi depth
-- __missing__: Fill value for unvalid data
-- __delimiter__: Delimiter of data file e.g. tab
-- __units__: Comma separated list of units e.g. "nm,1/m,1/m"
-
 
 ## Get Datasets
 

@@ -55,7 +55,27 @@ water_depth: < 10
 Allows to search for datasets where a field is greater that or smaller than a reference. For number fields the functionality is obvious. 
 When applying the operator to String fields, alphanumerical comparisoins are used (i.e. C>B is TRUE).
 
+__Possible fields are__:
 
+- __path__: path where data files are stored
+- __received__: date data were received
+- __identifier_product_doi__: Product DOI (if available)
+- __investigators__: Primary Investigators (PIs) of the experiment
+- __affiliations__: affiliations of the PIs.
+- __contact__: ontact (email address) of the PIs.
+- __experiment__: identifier of the experiment
+- __cruise__: identifier of the cruise
+- __data_file_name__: name of the original data file
+- __data_type__: data type (e.g. scan, cast) (not mandatory)
+- __documents__: Comma separated list of uploaded supplementary documents
+- __data_status__: could be final, preliminary
+- __water_depth__: Water depth at measurement point (in meters) (not mandatory)
+- __measurement_depth__: Measurement depth (in meters) (not mandatory)
+- __secchi_depth__: Secchi depth (in meters) (not mandatory)
+- __missing__: Fill value for unvalid data
+- __delimiter__: Delimiter of data file e.g. 'tab', 'comma'
+
+Consider that some of the metadata in the above list are not mandatory (since they can be either in the file header as metadata or as data fields), thus the results of this kind of query for these fields could be not exaustive.
 
 ## Groups
 
