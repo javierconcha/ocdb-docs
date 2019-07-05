@@ -9,7 +9,7 @@ Any data the submitter has agreed to publish is searchable for the public.
 The OCDB WebUI offers a _Search_ interface. 
 Data can be searched by acquisition date, product groups (listed [here](ocdb-search.md#groups)) and a _Search_ text field. In the _Search_ text field Users can enter any word(s) that will be used to screen the Database for any file containing that word(s). This field also allows to use the so-called Lucene syntax which enables you to search for specific field values and also allows chaining.
 
-Please refer to the [__Search__](ocdc-search.md) chapter, for more details around the Lucene search syntax.
+Please refer to the [__Search__](ocdb-search.md) chapter, for more details around the Lucene search syntax.
 
 ### Set region
 Region for search can be set both either entering coordinates clicking on 'MANUALLY ENTER COORDINATES' button, or selecting a drawing a polygon on the map.
