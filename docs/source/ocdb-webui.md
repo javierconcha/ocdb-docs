@@ -1,6 +1,6 @@
 # User Manual for the OCDB WebUI
 
-The main features of the OCDB database system are the provision of the data to the research community with an enhanced search facility. 
+The main feature of the OCDB Database system is the provision of the data to the research community with an enhanced search facility. 
 
 
 ## Search
