@@ -119,7 +119,7 @@ This data can be anytime re-processed into the Database from the _Submit_ page.
 
 Through the above actions, the following statuses for submissions can be set
 
-- __SUBMITTED__: submission contains errors xx
+- __SUBMITTED__: submission contains errors and could not be validated
 - __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
 - __CANCELLED__: database entries linked to this submission have been canceled from the Database
 - __PROCESSED__: submission data are searchable in the Database by submission owner and admin users
