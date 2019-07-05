@@ -14,7 +14,7 @@ In addition, when interested, registered users will be able to ask for the gener
 
 Any data the submitter has agreed to publish is searchable for the public. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed in 'Groups' section [here](ocdb-variables-list.md)) and a _Search_ text field. In the _Search_ text field Users can enter a single keyword which will attempt to find data using the meta
+Data can be searched by acquisition date, product groups (listed [here](ocdb-search.md#groups)) and a _Search_ text field. In the _Search_ text field Users can enter a single keyword which will attempt to find data using the meta
 data fields provided by the submitter. This field also allows to use the so-called Lucene syntax which enables you to search for specific field values and also allows chaining.
 
 Please refer to the search chapter in OCDB Command Line Client and Python API section, for more details around the Lucene search syntax.
@@ -26,7 +26,7 @@ Region for search can be set both either entering coordinates clicking on 'MANUA
 
 ### Advanced options
 
-In adavnced options menu, __single products__ (listed in 'Variables' section [here](ocdb-variables-list.md)) can be selected, the wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold could also be set (when provided in metadata). Finally measurements taken in optically shallow waters van be either excluded or selected. 
+In adavnced options menu, __single products__ can be selected (a list of standard name for variables is available [here](ocdb-standard-field-unit.md)). The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold can also be set (when provided in metadata). Finally measurements taken in optically shallow waters van be either excluded or selected. 
 
 ![advanced](docs/source/static/webui/advanced_options.png)
 

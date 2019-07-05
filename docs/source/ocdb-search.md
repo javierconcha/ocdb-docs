@@ -59,8 +59,8 @@ When applying the operator to String fields, alphanumerical comparisoins are use
 
 ## Groups
 
-The search interface allows to restrict result sets to certain geophysical variable types, the so-called "groups".
-A list of groups and the variables covered is listed in the table below:
+The search interface allows to restrict result sets to certain geophysical variable types, organised by groups.
+A list of groups and the variables covered is listed in the table below. Single products acronym are fully described [here](ocdb-standard-field-unit.md).
 
 ```eval_rst
 ============ =============================================================
@@ -72,14 +72,14 @@ bb           Spectral backscattering coefficients: bb, bbp, beta (VSF)
 c            Spectral attenuation coefficients: c, cg, cp, cpg
 DC           Dissolved carbon: DIC, DOC, pCO2, alkalinity, CDOM
 PC           Particulate carbon: PIC, POC
-SPM          Suspended particulate matter
+SPM          Suspended Particulate Matter
 AOT          Aerosol optical properties: AOT, angstrom, water vapor, ozone
 nutrients    Si, N, P, oxygen
 CTD          Hydrography: Wt, Sal/Cond, sigmaT
 fluorescence Fluorescence
 productivity NPP, NCP, GPP, PP
-Chl          Chlorophyll-a only
-HPLC         HPLC: Phytoplankton pigments
+Chl          Chlorophyll-a only (fluorometrically/spectrophotometrically derived)
+HPLC         HPLC derived phytoplankton pigments
 ============ =============================================================
 ```
 
