@@ -94,10 +94,18 @@ api.set(server_url="[some server url]")
 
 ```
 
+## Search Database with the Python API
 
-## Search Database
+The function 'find_datasets' allow to query the Database for several information, using different keywords:
+__expr__: look for ay files containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
+__region__:
+'region': None, 'time': None, 'wdepth': None, 'mtype': 'all', 'shallow': 'no', 'pmode': 'contains', 'pgroup': None, 'status': None, 'submission_id': None, 'pname': None, 'geojson': True, 'offset': None, 'count': None, 'user_id': None}
 
-The first example below for instance attempts to find data files that include the name *"Colleen"* in the investigators meta field.
+
+
+## Search Database with Lucene syntax
+
+The first example below attempts to find data files that include the name *"Astrid"* in the investigators meta field.
 
 
 bash:
@@ -117,7 +125,7 @@ ocdb-cli ds find --expr "investigators: *Colleen*"
 
 python:
 ```python
-api.find_datasets(expression="investigators:*Colleen*")
+api.find_datasets(expr="investigators:*Colleen*")
 
 {
   "locations": {},
@@ -129,6 +137,8 @@ api.find_datasets(expression="investigators:*Colleen*")
     },
     ...
 ```
+
+A complete and up-to-date list of the fields that can be queried is available [here](ocdb-search.md)
 
 ## Get Datasets
 
