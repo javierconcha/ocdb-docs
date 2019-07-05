@@ -77,7 +77,7 @@ rst tables instead. Use this tool for smaller tables: [Table Editor](https://tru
 This tool will generate reStructured text which is very similar to markdown.
 Include the text like this:
 
-```rst_eval
+```eval_rst
 +---------+---------+---------+
 | header1 | header2 | header3 |
 +=========+=========+=========+
