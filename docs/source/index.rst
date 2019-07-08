@@ -16,7 +16,7 @@ Only when agreed by the contributor, in-situ measurements are published into the
 
 Published, best quality data will be used to generate Match-up files with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
 
-The Database has been designed in order to guarantee easy access to data, a strong search engine, high usability, easy data validation, interoperability with other Database (in particular NASA SeaBASS Database) and to be automatable and easy to deploy. For more information about Database system design visit xx.
+The Database has been designed in order to guarantee easy access to data, a strong search engine, high usability, easy data validation, interoperability with other Database (in particular NASA SeaBASS Database) and to be automatable and easy to deploy.
 
          Go to the Copernicus OCDB_
 
