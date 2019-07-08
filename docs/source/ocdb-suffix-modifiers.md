@@ -24,9 +24,9 @@ The table below lists acceptable suffixes to modify field names. They must be ap
 
 | Field Modifiers |  Units |  Description  | 
 |------------|--------|---------------|
-| _abun | cell/L | cell abundance for a particular (phytoplankton) taxonomic type | 
-| _biovol | m^3/L | bio-volume for a particular (phytoplankton) taxonomic type | 
-| _carbon | ug/L | carbon concentration for a particular (phytoplankton) taxonomic type | 
+| _abun | cell/L | Cell abundance for a particular (phytoplankton) taxonomic type | 
+| _biovol | m^3/L | Bio-volume for a particular (phytoplankton) taxonomic type | 
+| _carbon | ug/L | Carbon concentration for a particular (phytoplankton) taxonomic type | 
 | _bincount | none | Number of records averaged into a bin or reported measurement specific to the prefix that _bincount is attached to. The field bincount can simply be used if the bincount applies to all forms of data in the file but this field suffix (i.e. '<field>_bincount') can be used multiple times in the same file for field-specific numbers. | 
 | _cv | unitless | Coefficient of Variation |  
 | _sd | same as base field's units | Standard Deviation | 
