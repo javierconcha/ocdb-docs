@@ -98,13 +98,13 @@ api.set(server_url="[some server url]")
 
 The function 'find_datasets' allow to query the Database for several information, using different keywords:
 - __expr__: looks for any file containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
-- __region__:
+- __region__: looks for fles containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
 - __start_time__: looks for any file containing measurement time later than the selected date (format: "2016-07-01")
 - __end_time__: looks for any file containing measurement time earlier than the selected date (format: "2019-07-01")
-- __wdepth__:
+- __wdepth__: looks for any file containing measurements collected within a passed range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
 - __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
-- __pmode__: 
+- __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all). 
 - __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Groups](ocdb-search.md#groups) section for the complete list
 - __pname__: looks for files containing only the specified variables. A complete list of queryable variables are avaialable [here](ocdb-standard-field-unit.md)
 - __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and and data owners) 
