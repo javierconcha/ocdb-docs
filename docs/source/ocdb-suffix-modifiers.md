@@ -19,7 +19,7 @@ The table below lists acceptable modifiers to modify field names. They must be a
 | _stokes3 | does not change base field's units | Third Stokes parameter for characterizing polarization |
 | _stokes4 | does not change base field's units | Fourth Stokes parameter for characterizing polarization |
 
-## Suffix
+## Suffixes
 The table below lists acceptable suffixes to modify field names. They must be appended at the end of field name, after any modifiers or wavelength. For any field including a suffix, a corresponding field (without suffix) must exist (e.g. if Rrs442.5_sd is provided, Rrs442.5 must exist).
 
 | Field Modifiers |  Units |  Description  | 
