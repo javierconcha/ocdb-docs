@@ -14,7 +14,7 @@ To install the CLI and API, please use following steps.
     git clone https://github.com/bcdev/ocdb-client
     cd ocdb-client
     conda env create
-    [conda] activate ocdb-client
+    [conda] activate ocdb
     python setup.py install
 ```
 
