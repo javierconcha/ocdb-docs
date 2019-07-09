@@ -275,7 +275,7 @@ A tag is added to a message by writing the tag name in curly braces. Example:
 The possible tags for each validation rule is listed above in the descriptions of the rule parameters.
 
 
-###Modifiers
+### Modifiers
 A variable name can optionally be followed by any number of digits to e.g. denote the wavelength at which the measurement was taken. The name in the configuraiton file must be the raw name, 
 without any suffix nor modifier; these are automatically stripped for the validation chores.
 A list of acceptable suffix and modifiers are listed [here](ocdb-suffix-modifiers.md)
