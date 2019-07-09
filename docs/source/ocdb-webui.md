@@ -16,18 +16,18 @@ Please refer to the [__Search__](ocdb-search.md) chapter, for more details aroun
 ### Set region
 Region for search can be set both either by entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button, or by drawing a polygon on the map.
 
-![region](static/webui/select_region.png)
+![](static/webui/select_region.png)
 
 ### Advanced options
 
 In advanced options menu, __single products__ can be selected (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)). The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold can also be set (when provided in metadata). Finally measurements taken in optically shallow waters can be either excluded or selected. 
 
-![advanced](static/webui/advanced_options.png)
+![](static/webui/advanced_options.png)
 
 ### Save search
 Any query can be saved for replicating the same search in the future (search options are saved, not the results!). Clicking on _SAVE SEARCH_ and assigning a name to it. Search query can be edited and/or shared by clicking on _<>_ button.
 
-![save](static/webui/save_search.png)
+![](static/webui/save_search.png)
 
 ## Submissions
 
@@ -40,7 +40,7 @@ To add a __new submission__, click on _NEW SUBMISSION_ on the top right corner.
 A new dialog will open. Please add an identifier (_Submission Label_) for the submission and a path (_affiliation/experiment/cruise_)
 where submission files will be stored under. The submission label will univocally refer to the submission, while submission path could be the same for multiple submissions.
 
-![submission](static/webui/submission_dialog.png)
+![](static/webui/submission_dialog.png)
 
 Clicking on _Publish Data (Y)_ the user agrees to publish the data right after the submission and the quality check process. 
 Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. Leaving the field empty will not allow the publication at all.
@@ -51,10 +51,10 @@ Click on _SUBMIT_ to initiate the validation process.
 Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-rules.md)
 Click on _List Files_ available among _Actions_ tools to see the results of the validation, shown for each file.
 
-![list](static/webui/list_ex.png)
+![](static/webui/list_ex.png)
 
-In case of errors or warnings, for each file, click on _List Import Issues_ ![list2](static/webui/list.png) to show the list of error and warning messages.
-Single files can be thus download ![down](static/webui/download.png) and re-uploaded ![up](static/webui/upload.png) and validated again.
+In case of errors or warnings, for each file, click on _List Import Issues_ ![](static/webui/list.png) to show the list of error and warning messages.
+Single files can be thus download ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and validated again.
 
 In case of errors, the status of the submission is set to _SUBMITTED_. Submissions containing errors are not further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
@@ -62,7 +62,7 @@ If the validation succeeds, the status of the submission is set to _VALIDATED_ a
 
 The picture below, summarises the whole process for submission and data validation.
 
-![process](static/webui/submission_process.png)
+![](static/webui/submission_process.png)
 
 ### Submission Actions 
 In _Submit_ page, any registered user, after login, can manage her/his own submissions and submission files.
@@ -71,7 +71,7 @@ Each submission is listed with its label, submission date, (if provided) publica
 
 __List Files__: 
 
-![listf](static/webui/list.png)
+![](static/webui/list.png)
 
 It shows a table of selected submission files. Actions are applicable for each file (see _Submission File Actions_ section below).
 
@@ -79,25 +79,25 @@ It shows a table of selected submission files. Actions are applicable for each f
 
 __Process Data__ (Admin users only):
 
-![list](static/webui/process.png)
+![](static/webui/process.png)
 
 Before they are processed, validated data are still not visible in the Database to anyone. __Process Data__ allows to start the processing action, at the end of which the data are searchable in the Database, but __ONLY__ to admin users and the owner of the data. 
 
 __Publish Data__ (Admin users only):
 
-![list](static/webui/publish.png)
+![](static/webui/publish.png)
 
 With _Publish Data_ data are processed (if not processed yet) into the Database and the status of the data is set to __PUBLISHED__ and is, therefore, searchable by the public in the Database. The publishing process checks whether the data has been already processed, to avoid data duplication.
 
 __Delete Submission__ (Admin users only):
 
-![list](static/webui/delete.png)
+![](static/webui/delete.png)
 
 The whole submission is deleted, including processed/published data from the search database.
  
 __Halt Restart Submission__:
 
-![list](static/webui/play.png)
+![](static/webui/play.png)
 
 The user is able to halt a submission. This will denote the administrators that the user wished that the submission is __NOT__ to be processed. Once the process is halted, a __Restart__ button will appear, and user can use it to comunicate submission can be now processed.
 
@@ -126,19 +126,19 @@ __List Import Issues__:
 
 List issues the system encountered when validating the data file.
 
-![list](static/webui/list.png)
+![](static/webui/list.png)
 
 __Delete File__:
 
 Remove the file from the submission.
 
-![delete](static/webui/delete.png)
+![](static/webui/delete.png)
 
 __Download File__:
 
 Download the file if a change to the submission file is required.
 
-![download](static/webui/download.png)
+![](static/webui/download.png)
 
 
 __Upload File__:
