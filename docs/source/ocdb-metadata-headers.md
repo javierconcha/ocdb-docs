@@ -80,3 +80,8 @@ The following fields (marked as obsolete in the vaildation rules) are added and 
 * **received** Date when the file has been submitted into the Database by investigators
 * **processed** Date when the file has been processed and published into the Database
 * **identifier_product_doi** The DOI (Digital Object Identifier; see http://www.doi.org/) associated with the experiment or the Dataset
+
+
+## Example 
+'''eval_rst
+...fjgkdgj
