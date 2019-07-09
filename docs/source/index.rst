@@ -33,10 +33,7 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-webui
    ocdb-api-cli
    ocdb-search
-   ocdb-validation-rules
+   ocdb-metadata-headers
+   ocdb-standard-field-unit
    ocdb-valication-config
-   ocdb-rest
    ocdb-data-access-policy
-   ocdb-MDB_user_manual
-   ocdb-tech-docs
-   ocdb-tech-deployment
