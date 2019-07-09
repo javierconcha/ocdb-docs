@@ -6,17 +6,17 @@
 Welcome to the Copernicus OCDB Database System (OCDB)!
 ======================================================
 Comparison between simultaneous in-situ measurements and satellite sensor products are fundamental for satellite product validation, to prove the accuracy and limitations of the data services.
-In addition, in-situ measurements alone or combined with satellite products are required for Ocean Colour algorithm development
-Considered the need for sustained access to in situ-Fiducial Reference Measurements for the Copernicus programme, the aim of the Copernicus Ocean Colour Database (OCDB_) is to provide a platform to collect, organize and make available to ocean colour community, ocean colour related in-situ measurements, useful for satellite derived ocean colour products validation and algorithm development.
+In addition, in-situ measurements alone or combined with satellite products are required for Ocean Colour algorithm development.
+Considering the need for sustained access to in situ-Fiducial Reference Measurements for the Copernicus programme, the aim of the Copernicus Ocean Colour Database (OCDB_) is to provide a platform to collect, organize and make available to the ocean colour community, ocean colour related in-situ measurements, and to ensure long-term stewardship of these critical data.
 
-This tool enables researchers to store and eventually share into an organised Database their own in-situ data, in a standardized format.
+This tool enables researchers to store and share, if elected, their in-situ data in an organised Database in a standardized format.
 
-Quality check on format, measurements as well as on protocols complience is performed, and a quality flag is provided for each measurement. 
-Only when agreed by the contributor, in-situ measurements are published into the Database and made available to the public.  
+Only when elected by the contributor, in-situ measurements are published into the Database and made available to the public. 
+Quality checks on format, measurements as well as on protocol compliance are performed, and a quality flag is provided for each measurement. 
+ 
+Published, best quality data are used to generate Match-up files with Sentinel-3 Level 2 Ocean Colour OLCI A and B products which are also made available through the Database.
 
-Published, best quality data will be used to generate Match-up files with Sentinel-3 Level 2 Ocean Colour OLCI A and B products.
-
-The Database has been designed in order to guarantee easy access to data, a strong search engine, high usability, easy data validation, interoperability with other Database (in particular NASA SeaBASS Database) and to be automatable and easy to deploy.
+The Database has been designed in order to guarantee easy access to data, a strong search engine, automation via command line access and interoperability with other Databases (in particular NASA SeaBASS Database).
 
          Go to the Copernicus OCDB_
 
