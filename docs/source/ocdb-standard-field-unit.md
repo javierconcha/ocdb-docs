@@ -5,7 +5,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
 
 
 
- | Field Name |  Units |  Description  | 
+ | **Field Name** |  **Units** |  **Description**  | 
  |------------|--------|---------------|
  | a | 1/m | Total absorption coefficient (aw + ap + ag)  | 
  | a*ph | m^2/mg | Chlorophyll a specific absorption coefficient  | 
