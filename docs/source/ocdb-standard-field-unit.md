@@ -1,4 +1,4 @@
-##Standard field names and units
+# Standard field names and units
 
 The table below shows the list of valid field names and units to be used both when submitting measurements and querying the Database. 
 In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Standard Field and Units](https://seabass.gsfc.nasa.gov/wiki/stdfields) have been reported here. On the other hand, the table it is also constantly updated with new fields, whenever needed, as well as OCDB dedicated variables. 

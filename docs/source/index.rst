@@ -35,5 +35,6 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-search
    ocdb-metadata-headers
    ocdb-standard-field-unit
+   ocdb-suffix-modifiers
    ocdb-valication-config
    ocdb-data-access-policy

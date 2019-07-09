@@ -1,6 +1,5 @@
 # Validation configuration
 
-
 Every _in-situ_ measurement document sumbitted to the OCDB system is validated against a list of rules before being accepted by the system. 
 The validation rules can be freely configured by admin users using the configuration file "validation_config.json"
 
