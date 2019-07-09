@@ -31,3 +31,4 @@ The table below lists acceptable suffixes to modify field names. They must be ap
 | _cv | unitless | Coefficient of Variation |  
 | _sd | same as base field's units | Standard Deviation | 
 | _se | same as base field's units | Standard Error | 
+| _qa | none | added by OCDB staff, it is set to True when measurement pass internal quality checked and will be considered for matchups |
