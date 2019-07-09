@@ -60,7 +60,7 @@ The following headers are optional. Some of them, if not provided, are automatic
 * **end_time**
 The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GMT]'), in GMT. Added during submission processing if not provided.
 
-* _north_latitude Maximum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added during submission processing if not provided.
+* **north_latitude** Maximum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added during submission processing if not provided.
  
 * **south_latitude** Minimum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added during submission processing if not provided.
 
@@ -73,3 +73,10 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 * **data_file_name** The name of the data file submitted. Added during submission processing if not provided. 
 
 * **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set.
+
+
+## Headers added by OCDB staff
+The following fields (marked as obsolete in the vaildation rules) are added and managed by OCDB staff.
+* **received** Date when the file has been submitted into the Database by investigators
+* **processed** Date when the file has been processed and published into the Database
+* **identifier_product_doi** The DOI (Digital Object Identifier; see http://www.doi.org/) associated with the experiment or the Dataset
