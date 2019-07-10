@@ -77,6 +77,11 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 
 * **wavelength_option** Set to hyperspectral or multispectral, Required for products that have an associated wavelength.
 
+* **instrument_model** Comma seprataed list of the model of the instruments whose measurements are being reported. Replace any spaces in the names with underscores. Recommended.
+
+* **instrument_manufacturer** Comma seprataed list of the instrument manufacturers of the measurements that are being reported (e.g., Biospherical_Instruments_Inc.) Replace any spaces in the name with underscores. Recommended.
+
+* **calibration_date** The most recent relevant calibration date for the primary instrument (format: 'YYYYMMDD').
 
 ## Headers added by OCDB staff
 The following fields (marked as obsolete in the vaildation rules) are added and managed by OCDB staff.
