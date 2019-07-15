@@ -278,7 +278,7 @@ __Get Submissions for a specific User__:
 
 cli:
 ```bash
-ocdb-cli sbm user --user-id <user-id>
+ocdb-cli sbm user --user_name <user-name>
 ```
 
 python:
