@@ -3,8 +3,8 @@
 The table below shows the list of valid field names and units to be used both when submitting measurements and querying the Database. 
 In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Standard Fields and Units](https://seabass.gsfc.nasa.gov/wiki/stdfields) have been reported here, together with OCDB dedicated variables. The table it is also constantly updated with new fields, whenever needed. 
 
-Field Name|Units|Description
-------------|--------|-------
+ Field Name | Units | Description
+ ------------|--------|-------
  a | 1/m | Total absorption coefficient (aw + ap + ag) 
  a*ph | m^2/mg | Chlorophyll a specific absorption coefficient 
  a*srfa | m^2/mg | Specific absorption coefficient of Suwanee River Fulvic Acid standard 
