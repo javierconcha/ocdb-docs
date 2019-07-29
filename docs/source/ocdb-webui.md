@@ -7,11 +7,11 @@ The main feature of the OCDB Database system is the stewardship of in-situ FRM d
 
 Only those data are available in searches which were elected for publication by their submitter. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed [here](ocdb-search.md#groups)) and a _Search_ text field. 
+Data can be searched by acquisition date, product groups (listed [here](/docs/source/ocdb-search.md#groups)) and a _Search_ text field. 
 
 In the _Search_ text field, users can enter any word(s) that will be used to screen the Database for any file containing that word(s). This field also allows the use of the so-called Lucene syntax which enables searches for specific field values and also allows chaining.
 
-Please refer to the [__Search__](ocdb-search.md) chapter, for more details around the Lucene search syntax.
+Please refer to the [__Search__](/docs/source/ocdb-search.md) chapter, for more details around the Lucene search syntax.
 
 ### Set region
 Region for search can be set both either by entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button, or by drawing a polygon on the map.
@@ -20,7 +20,7 @@ Region for search can be set both either by entering coordinates by clicking on 
 
 ### Advanced options
 
-In advanced options menu, __single products__ can be selected (a list of standard names for variables is available [here](ocdb-standard-field-unit.md)). The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold can also be set (when provided in metadata). Finally measurements taken in optically shallow waters can be either excluded or selected. 
+In advanced options menu, __single products__ can be selected (a list of standard names for variables is available [here](/docs/source/ocdb-standard-field-unit.md)). The wavelength option allows to filter __hyperspectral__ and __multispectral__ measurements. __Water depth__ threshold can also be set (when provided in metadata). Finally measurements taken in optically shallow waters can be either excluded or selected. 
 
 ![](static/webui/advanced_options.png)
 
@@ -46,9 +46,9 @@ Clicking on _Publish Data (Y)_ the user agrees to publish the data right after t
 Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. Leaving the field empty will not allow the publication at all.
 Data for which the publication is not agreed are ingested into the Database but accessible only to the Database administrators and the user who provided the files. An agreement to publish can also be provided anytime in the future by contacting ops@eumetsat.int.
 
-Drag and Copy or Select measurement files and documentation in the dedicated windows. File format and documentation required are described [here](ocdb-submission-format.md).
+Drag and Copy or Select measurement files and documentation in the dedicated windows. File format and documentation required are described [here](/docs/source/ocdb-submission-format.md).
 Click on _SUBMIT_ to initiate the validation process.
-Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-rules.md)
+Files containing measurements are immediately automatically checked according to [validation rules](/docs/source/ocdb-validation-rules.md)
 Click on _List Files_ available among _Actions_ tools to see the results of the validation, shown for each file.
 
 ![](static/webui/list_ex.png)
