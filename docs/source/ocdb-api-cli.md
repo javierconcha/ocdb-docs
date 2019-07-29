@@ -97,11 +97,11 @@ api.set(server_url="[some server url]")
 ## Search Database with the Python API
 
 The function 'find_datasets' allow to query the Database for several information, using different keywords:
-- __expr__: looks for any file containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
-- __region__: looks for fles containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
-- __start_time__: looks for any file containing measurement time later than the selected date (format: "2016-07-01")
-- __end_time__: looks for any file containing measurement time earlier than the selected date (format: "2019-07-01")
-- __wdepth__: looks for any file containing measurements collected within a passed range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
+- __expr__: looks for any files containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
+- __region__: looks for files containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
+- __start_time__: looks for any files containing measurement time later than the selected date (format: "2016-07-01")
+- __end_time__: looks for any files containing measurement time earlier than the selected date (format: "2019-07-01")
+- __wdepth__: looks for any files containing measurements collected within a passed range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
 - __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
 - __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all). 
