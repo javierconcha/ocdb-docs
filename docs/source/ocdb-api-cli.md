@@ -96,7 +96,7 @@ api.set(server_url="[some server url]")
 
 ## Search Database with the Python API
 
-The function 'find_datasets' allows querying the Database for several information, using different keywords:
+The method 'find_datasets' allows querying the Database for several information, using different keywords:
 - __expr__: looks for any files containing any of the words passed. Also Lucene syntax can be used (See [below](/docs/source/ocdb-api-cli.md#search-database-with-lucene-syntax)).
 - __region__: looks for files containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
 - __start_time__: looks for any files containing measurement time later than the selected date (format: "2016-07-01")
