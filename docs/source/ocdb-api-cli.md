@@ -218,7 +218,7 @@ ocdb-cli user get --user scott
 
 python:
 ```python
-api.get_user(name=<user_name>)
+api.get_user(username=<user_name>)
 ```
 
 You need to have administrative access rights to perform this operation for any user. 
