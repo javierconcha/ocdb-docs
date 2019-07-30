@@ -7,11 +7,11 @@ The main feature of the OCDB Database system is the stewardship of in-situ FRM d
 
 Only those data are available in searches which were elected for publication by their submitter. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed [here](/docs/source/ocdb-search.md#groups)) and a _Search_ text field. 
+Data can be searched by acquisition date, product groups (listed [here](ocdb-search.md#groups)) and a _Search_ text field. 
 
 In the _Search_ text field, users can enter any word(s) that will be used to screen the Database for any file containing that word(s). This field also allows the use of the so-called Lucene syntax which enables searches for specific field values and also allows chaining.
 
-Please refer to the [__Search__](/docs/source/ocdb-search.md) chapter, for more details around the Lucene search syntax.
+Please refer to the [__Search__](ocdb-search.md) chapter, for more details around the Lucene search syntax.
 
 ### Set region
 Region for search can be set both either by entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button, or by drawing a polygon on the map.
