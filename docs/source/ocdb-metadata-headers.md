@@ -84,13 +84,13 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 
 * **calibration_date** The most recent relevant calibration date for the primary instrument (format: 'YYYYMMDD'). Recommended.
 
-* **cloud_percent** Percent cloud cover for the entire sky: 0 indicates no clouds and 100 indicates completely overcast. Could be also provided as a data field. Recommended.
+* **cloud_percent** Percent cloud cover for the entire sky: 0 indicates no clouds and 100 indicates completely overcast. It could be also provided as a data field (field name: 'cloud'). Recommended.
 
-* **secchi_depth** The secchi depth at the station where the data were collected (in meters). Could be also provided as a data field. Recommended.
+* **secchi_depth** The secchi depth at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'secchi'). Recommended.
 
-* **wave_height** The wave height at the station where the data were collected (in meters). Could be also provided as a data field. Recommended.   
+* **wave_height** The wave height at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'waveht'). Recommended.   
 
-* **wind_speed** The wind speed at the station where the data were collected (in meters per second). Could be also provided as a data field. Recommended.   
+* **wind_speed** The wind speed at the station where the data were collected (in meters per second). It could be also provided as a data field (field name: 'wind'). Recommended.   
 
 
 ## Headers added by OCDB staff
