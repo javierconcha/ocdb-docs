@@ -1,6 +1,7 @@
 # Metadata Headers
 
-Below, the list of required, optional or obsolete metadata headers is shown, with description and examples.
+Below, the list of required and optional headers is shown, with description and examples.
+Note that some optional headers are recommended: they are used to perform measurements quality check. Measurements for which these metadata are not provided, cannot be flagged as best quality.
 
 ## Required Headers
 
@@ -71,7 +72,7 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 
 * **data_file_name** The name of the data file submitted. Added during submission processing if not provided. 
 
-* **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set.
+* **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set. Recommended
 
 * **identifier_product_doi** The DOI (Digital Object Identifier; see http://www.doi.org/) associated with the experiment or the Dataset, if availabe
 
@@ -81,7 +82,16 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 
 * **instrument_manufacturer** Comma seprataed list of the instrument manufacturers of the measurements that are being reported (e.g., Biospherical_Instruments_Inc.) Replace any spaces in the name with underscores. Recommended.
 
-* **calibration_date** The most recent relevant calibration date for the primary instrument (format: 'YYYYMMDD').
+* **calibration_date** The most recent relevant calibration date for the primary instrument (format: 'YYYYMMDD'). Recommended.
+
+* **cloud_percent** Percent cloud cover for the entire sky: 0 indicates no clouds and 100 indicates completely overcast. Could be also provided as a data field. Recommended.
+
+* **secchi_depth** The secchi depth at the station where the data were collected (in meters). Could be also provided as a data field. Recommended.
+
+* **wave_height** The wave height at the station where the data were collected (in meters). Could be also provided as a data field. Recommended.   
+
+* **wind_speed** The wind speed at the station where the data were collected (in meters per second). Could be also provided as a data field. Recommended.   
+
 
 ## Headers added by OCDB staff
 The following fields (marked as obsolete in the vaildation rules) are added and managed by OCDB staff.
@@ -113,6 +123,13 @@ The following fields (marked as obsolete in the vaildation rules) are added and 
      /west_longitude=39.67942 [DEG]
      /water_depth=NA
      /wavelength_option=NA
+     /instrument_model=NA
+     /instrument_manufacturer=NA
+     /calibration_date=NA
+     /cloud_percent=NA
+     /secchi_depth=NA
+     /wave_height=NA
+     /wind_speed=NA
      !
      ! COMMENTS
      !
