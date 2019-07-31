@@ -12,7 +12,7 @@ Each MDB file contains:
 
 - All OLCI level-2 Full Resolution products, **25x25 pixels** centered on site/measurement point
 
-- **Fully normalized** OLCI Remote Sensing Reflectance (Rrs) values (corrected for BRDF using tables from Morel et al. 2002, need to be updated to Hyperspectral Look-Up-Tables by Gentili very soon) 
+- **Fully normalized** OLCI Remote Sensing Reflectance (Rrs) values up to 709 nm  
 
 - BRDF factors provided to retrieve original directional reflectance of OLCI products
 
