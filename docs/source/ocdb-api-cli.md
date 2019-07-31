@@ -176,7 +176,7 @@ __Login User__:
 The login procedure will ask for a user name and password. You can specify the password
  as an option. However, under normal circumstances we advice to use the command line prompt.
 
-The example below will login a user with the user name 'admin'. 'admin' is
+The example below will login a user with the user name 'Scott'. 'Scott' is
 a dummy user that should be present in the Copernicus production database. Scott
 does not have any privileges.
 
@@ -198,7 +198,7 @@ To add a user, specify the required user information
 
 cli:
 ```bash
-ocdb-cli user add -u admin -p admin -fn Submit -ln Submit -em jj -ph hh -r admin
+ocdb-cli user add -u scott -p Scottpass -fn Scott -ln Tiger -em Scott_email -ph 012345-78910 -r Submit
 ```
 
 python:
