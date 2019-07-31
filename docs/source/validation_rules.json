@@ -165,17 +165,17 @@
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
-	{
+	  {
       "name": "calibration_date",
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
-	{
+	  {
       "name": "instrument_manufacturer",
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
-	{
+	  {
       "name": "instrument_model",
       "type": "field_optional",
       "warning": "@field_value_missing"
@@ -190,7 +190,7 @@
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
-	{
+	  {
       "name": "wavelength_option",
       "type": "field_optional",
       "warning": "@field_value_missing"
@@ -225,7 +225,7 @@
       "type": "field_obsolete",
       "warning": "@obsolete_field"
     },
-	{
+	  {
       "name": "processed",
       "type": "field_obsolete",
       "warning": "@obsolete_field"
