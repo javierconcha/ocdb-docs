@@ -32,43 +32,43 @@
     },
     {
       "name": "north_latitude",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "south_latitude",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "east_longitude",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "west_longitude",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "start_date",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "end_date",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "start_time",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "end_time",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "station_alt_id",
@@ -77,8 +77,8 @@
     },
     {
       "name": "data_file_name",
-      "type": "field_required",
-      "error": "@required_field_missing"
+      "type": "field_optional",
+	  "warning": "@field_value_missing"
     },
     {
       "name": "associated_archives",
@@ -152,16 +152,31 @@
     },
     {
       "name": "water_depth",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
+    },
+    {
+      "name": "measurement_depth",
       "type": "field_required",
       "error": "@required_field_missing"
     },
     {
-      "name": "measurement_depth",
-      "type": "field_obsolete",
-      "warning": "@obsolete_field"
-    },
-    {
       "name": "secchi_depth",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
+    },
+	{
+      "name": "calibration_date",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
+    },
+	{
+      "name": "instrument_manufacturer",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
+    },
+	{
+      "name": "instrument_model",
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
@@ -172,6 +187,11 @@
     },
     {
       "name": "wave_height",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
+    },
+	{
+      "name": "wavelength_option",
       "type": "field_optional",
       "warning": "@field_value_missing"
     },
@@ -205,10 +225,15 @@
       "type": "field_obsolete",
       "warning": "@obsolete_field"
     },
-    {
-      "name": "identifier_product_doi",
+	{
+      "name": "processed",
       "type": "field_obsolete",
       "warning": "@obsolete_field"
+    },
+    {
+      "name": "identifier_product_doi",
+      "type": "field_optional",
+      "warning": "@field_value_missing"
     },
     {
       "name": "below_detection_limit",
