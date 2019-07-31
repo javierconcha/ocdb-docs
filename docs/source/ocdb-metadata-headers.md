@@ -86,7 +86,7 @@ The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GM
 
 * **cloud_percent** Percent cloud cover for the entire sky: 0 indicates no clouds and 100 indicates completely overcast. It could be also provided as a data field (field name: 'cloud'). Recommended.
 
-* **secchi_depth** The secchi depth at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'secchi'). Recommended.
+* **secchi_depth** The secchi depth at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'sz'). Recommended.
 
 * **wave_height** The wave height at the station where the data were collected (in meters). It could be also provided as a data field (field name: 'waveht'). Recommended.   
 
