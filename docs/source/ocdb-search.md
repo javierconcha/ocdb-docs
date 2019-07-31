@@ -80,7 +80,7 @@ Consider that some of the metadata in the above list are not mandatory (since th
 ## Groups
 
 The search interface allows to restrict result sets to certain geophysical variable types, organised by groups.
-A list of groups and the variables covered is listed in the table below. Single products acronym are fully described [here](/docs/source/ocdb-standard-field-unit.md).
+A list of groups and the variables covered is listed in the table below. Single products acronym are fully described [here](ocdb-standard-field-unit.md).
 
 ```eval_rst
 ============ =============================================================
