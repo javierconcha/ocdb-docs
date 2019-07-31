@@ -3,7 +3,7 @@
 Automation and easy access is important. The OCDB database system does,
 therefore,
 offer a python command line interface as well as a Python API for accessing
-as well as manage submissions and users. 
+as well as managing submissions and users. 
 
 
 ## Installation
@@ -11,7 +11,7 @@ as well as manage submissions and users.
 To install the CLI and API, please use following steps.
 
 ```bash
-    git clone https://github.com/bcdev/ocdb-client
+    git clone https://github.com/eocdb/ocdb-client
     cd ocdb-client
     conda env create
     [conda] activate ocdb
@@ -20,7 +20,7 @@ To install the CLI and API, please use following steps.
 
 ## How to start it
 
-The OCDB client has been installed in to a so-called conda environment. In 
+The OCDB client has been installed into a so-called conda environment. In 
 order to start it you will always have to activate that envrionment using the following command:
 
 __Linux__:
@@ -41,7 +41,7 @@ __Windows__:
 activate ocdb
 ```
 
-Once that is done you can test whether it is is running by
+Once that is done, you can test whether it is running by
 
 ```bash
 ocdb-cli
@@ -77,7 +77,7 @@ ocdb-cli conf
 
 https://ocdb.eumetsat.int
 
-ocdb-cli cond server_url [some url]
+ocdb-cli conf server_url [some url]
 ```
 
 python:
@@ -120,30 +120,30 @@ The first example below attempts to find data files that include the name *"Astr
 
 bash:
 ```bash
-ocdb-cli ds find --expr "investigators: *Colleen*"
+ocdb-cli ds find --expr "investigators: *Astrid*"
 
 {
   "locations": {},
-  "total_count": 900,
+  "total_count": 4,
   "datasets": [
     {
-      "id": "5c6d632661d82d28bf8ce807",
-      "path": "URI/Mouw/NIH-NSF_Lake_Erie/URI_Lake_Erie_2013/archive/URI_Lake_Erie20130820_2_0m_ag.txt"
+      "id": "5d2433e81f59e20001aaae74",
+      "path": "AWI/SO/SO235/archive/Bracher_2019_SO235_db.txt"
     },
     ...
 ```
 
 python:
 ```python
-api.find_datasets(expr="investigators:*Colleen*")
+api.find_datasets(expr="investigators:*Astrid*")
 
 {
   "locations": {},
-  "total_count": 900,
+  "total_count": 4,
   "datasets": [
     {
-      "id": "5c6d632661d82d28bf8ce807",
-      "path": "URI/Mouw/NIH-NSF_Lake_Erie/URI_Lake_Erie_2013/archive/URI_Lake_Erie20130820_2_0m_ag.txt"
+      "id": "5d2433e81f59e20001aaae74",
+      "path": "AWI/SO/SO235/archive/Bracher_2019_SO235_db.txt"
     },
     ...
 ```
@@ -152,19 +152,19 @@ A complete and up-to-date list of the fields that can be queried is available [h
 
 ## Get Datasets
 
-The search engine returns a list of datasets. In order to retrieve the actual data you, you will have 
-to use the result and obtain dataset IDs. A dataset ID can be used to get actual data:
+The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step sgould be used. A dataset ID can be used to get actual data as in the example below:
 
 python:
 ```python
-api.get_dataset(dataset_id='5c6d632661d82d28bf8ce807', fmt='pandas')
+api.get_dataset(dataset_id='5d2433e81f59e20001aaae74', fmt='pandas')
 
-Out[10]: 
-     wavelength      ag   ag_sd
-0           300  6.1015  0.2407
-1           301  5.9565  0.2389
-2           302  5.8140  0.2352
-3           303  5.6763  0.2318
+	      date	    time	     lat	    lon	depth	  ...	 tot_chl_a
+0   20140723	12:30:00	-19.9743	57.4493	    0	     	  0.05280
+1	  20140723	14:00:00	-19.7216	57.6288	    0		      0.04767
+2	  20140723	17:00:00	-19.2121	57.9908	    0		      0.05028
+3	  20140723	20:00:00	-18.7211	58.3397	    0	       	0.04490
+4	  20140723	23:00:00	-18.2994	58.7023	    0		      0.07901
+
 ...
 
 ```
@@ -176,9 +176,8 @@ __Login User__:
 The login procedure will ask for a user name and password. You can specify the password
  as an option. However, under normal circumstances we advice to use the command line prompt.
 
-The example below will login a user with the user name 'Scott'. 'Scott' is
-a dummy user that should be present in the Copernicus production database. Scott
-does not have any privileges.
+The example below will login a user with the user name 'scott'. 'scott' is
+a 'submitter' user. 'scott', after login, could submit data to the system but he has not have any administrative privileges.
 
 cli:
 ```bash
@@ -198,7 +197,7 @@ To add a user, specify the required user information
 
 cli:
 ```bash
-ocdb-cli user add -u scott -p Scottpass -fn Scott -ln Tiger -em Scott_email -ph 012345-78910 -r Submit
+ocdb-cli user add -u scott -p Scottpass -fn Scott -ln Tiger -em Scott_email -ph 012345-78910 -r submit
 ```
 
 python:
@@ -206,6 +205,7 @@ python:
 api.add_user(username='<user_name>', password='<passwd>', roles=['<role1>, <role2>'])
 ```
 
+Role could be either submit (for any users) or admin (for admin users only)
 You need to have administrative access rights to be able to complete this action.
 
 
@@ -236,7 +236,7 @@ python:
 ```python
 api.delete_user(name=<user_name>)
 ```
-You need to have administrative access rights to be able to complete this action
+You need to have administrative access rights to be able to complete this action.
 
 __Update an Existing User__:
 
@@ -308,19 +308,19 @@ Users can delete their own submissions without restrictions.
 
 __Update Submission Status__:
 
-This command allows to manipulate the status of a submission. Some status changes will have impact on
+This command allows to manipulate the status assigned to any submission. Some status changes will have impact on
 whether the data are searchable or not.
 
 The following list shows the different stati and the impact on the accessibility when changing them:
 
 - SUBMITTED: A dataset has been submitted. Usually also means that the data has issues. This will trigger
   the automated validation process
-- VALIDATED: The data has been submitted and is clean
-- PROCESSED: The data has been processed into the database and is findable, but only to admins and the submitting user
+- VALIDATED: The data has been submitted and passed the quality checks (even in case any warnings were raised)
+- PROCESSED: The data has been processed into the database and is findable, but only to admin users and the user who submetted it
 - PUBLISHED: The data has been processed into the database and is publicly available
 - CANCELED: The data submission has been canceled. Setting this status will remove the data from the database and will
-  not be findable anymore
-- PAUSED: The user pauses the submission. This indicates that the admin shall not publish or process the data
+  not be findable anymore. It can be still reprocessed again into the database
+- PAUSED: The user pauses the submission. This indicates that the admin users shall not publish or process the data
 
 cli:
 ```bash
