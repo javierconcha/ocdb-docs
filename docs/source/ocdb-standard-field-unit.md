@@ -8,7 +8,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
 
 .. csv-table:: Standard fields
    :header: Field_Name,Units,Description
-   :widths: 30, 30, 100
+   :widths: 20, 10, 70
    :stub-columns: 1
    
    a, 1/m, Total absorption coefficient (aw + ap + ag) 
