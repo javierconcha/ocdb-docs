@@ -25,6 +25,55 @@ In the data submission process, any file is automatically checked for its own fo
 * Field names and units are defined as a list using respectively 'fields' and 'units' headers. The complete list of standard field names and units is available [here](ocdb-standard-field-unit.md). Field names and units are not case sensitive.
 * File names must not contain spaces or special characters (except for hyphens, underscores, and periods) and must be unique within a submission. Descriptive names including cruise and experiment names as well as date, depth or any other significant information is strongly recommended but not required.
 
+
+## Example for metadata headers section
+```bash
+     /begin_header
+     /investigators=Astrid_Bracher
+     /identifier_product_doi=10.1594/PANGAEA.898929
+     /affiliations=Alfred-Wegener-Institute_Helmholtz_Centre_for_Polar_and_Marine_Research
+     /contact=Astrid.Bracher@awi.de
+     /experiment=SO
+     /cruise=SO234
+     /data_file_name=Bracher_2019_SO234_db.txt
+     /documents=see_comments
+     /calibration_files=see_comments
+     /data_type=cast
+     /data_status=final
+     /start_date=20140710
+     /end_date=20140710
+     /start_time=12:21:00 [GMT]
+     /end_time=02:00:00 [GMT]
+     /north_latitude=-20.1266 [DEG]
+     /south_latitude=-29.695 [DEG]
+     /east_longitude=58.82304 [DEG]
+     /west_longitude=39.67942 [DEG]
+     /water_depth=NA
+     /wavelength_option=NA
+     /instrument_model=NA
+     /instrument_manufacturer=NA
+     /calibration_date=NA
+     /cloud_percent=NA
+     /secchi_depth=NA
+     /wave_height=NA
+     /wind_speed=NA
+     !
+     ! COMMENTS
+     !
+     ! Citation:
+     !  Bracher, Astrid; Cheah, Wee; Wiegmann, Sonja (2019): Phytoplankton pigment concentrations in the tropical Indian Ocean in July and August 2014 during RV Sonne cruises SO234 and SO235. Alfred Wegener Institute, Helmholtz Centre for Polar and Marine Research, Bremerhaven, PANGAEA, https://doi.org/10.1594/PANGAEA.898929. 
+     !  Supplement to: Booge, Dennis; Schlundt, Michael; Bracher, Astrid; Endres, Sonja; Zäncker, Birthe; Marandino, Christa A (2018): Marine isoprene production and consumption in the mixed layer of the surface ocean - a field study over two oceanic regions. Biogeosciences, 15(2), 649-667, https://doi.org/10.5194/bg-15-649-2018
+     !
+     ! Data converted from PANGAEA.
+     ! For docs and cal_files, see: https://doi.org/10.1594/PANGAEA.898929
+     !
+     /missing=-9999.
+     /delimiter=comma
+     /fields=station,sample,gear,date,time,lat,lon,depth,allo,asta,but-fuco,tot_chl_a,chl_b,chl_c3,chlide_a,diadino,diato,dino,dv_chl_a,dv_chl_b,fuco,hex-fuco,lut,neo,perid,phide_a,phytin_a,phytin_b,pyrophide_a,pyrophytin_a,viola,zea
+     /units=none,none,none,yyyymmdd,hh:mm:ss,degrees,degrees,m,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3,mg/m^3
+     /end_header
+```
+
 ## Documentation
 
 For each submission, data files should be accompanied by documentation describing any measurement protocols adopted and Calibration/Instrument Reports and any other information useful to gather the quality of the data provided.
