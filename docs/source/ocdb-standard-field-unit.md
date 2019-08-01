@@ -6,7 +6,7 @@ In order to guarantee interoperability with NASA SeaBASS Database, [SeaBASS Stan
 .. csv-table:: Standard fields
    :header: Field_Name,Units,Description
    :widths: 30, 30, 100
-   :header-rows: 1
+   :stub-columns: 1
    
    a, 1/m, Total absorption coefficient (aw + ap + ag) 
    a*ph, m^2/mg, Chlorophyll a specific absorption coefficient 
