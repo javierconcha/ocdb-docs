@@ -3,7 +3,7 @@
 The main feature of the OCDB Database system is the stewardship of in-situ FRM data and data provision to the Ocean Colour community through an enhanced search facility. 
 
 
-## Search
+## Get Data: Search
 
 Only those data are available in searches which were elected for publication by their submitter. 
 The OCDB WebUI offers a _Search_ interface. 
@@ -29,7 +29,7 @@ Any query can be saved for replicating the same search in the future (search opt
 
 ![](static/webui/save_search.png)
 
-## Submissions
+## Contribute Data: Submissions
 
 In this section data submission process is described.
 Only registered users are allowed to submit data. Please contact ops@eumetsat.int to be registered. Registered users after logining in can manage new and past submission in the _Submit_ page.
