@@ -33,6 +33,7 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-webui
    ocdb-api-cli
    ocdb-search
+   ocdb-contribute
    ocdb-metadata-headers
    ocdb-standard-field-unit
    ocdb-suffix-modifiers
