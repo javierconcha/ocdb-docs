@@ -30,6 +30,7 @@ The table below lists acceptable modifiers to modify field names. They must be a
 The table below lists acceptable suffixes to modify field names. They must be appended at the end of field name, after any modifiers or wavelength. For any field including a suffix, a corresponding field (without suffix) must exist (e.g. if Rrs442.5_sd is provided, Rrs442.5 must exist).
 
 ```eval_rst
+
 .. csv-table:: Filed suffixes
    :header: Field_suffix,Units,Description
    :widths: 30, 30, 100
