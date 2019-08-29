@@ -109,9 +109,9 @@ This data can be anytime re-processed into the Database from the _Submit_ page.
 
 ![](static/webui/cancel.png)
 
-### Submission Statuses
+### Submission Status
 
-Through the above actions, the following statuses for submissions can be set
+Through the above actions, the following stati for submissions can be set
 
 - __SUBMITTED__: submission contains errors and could not be validated
 - __VALIDATED__: all submission files passed file format check (no errors, warnings allowed)
@@ -149,9 +149,9 @@ Re-upload a new version of the file. The old one is overwritten. The validation 
 ![reupload](static/webui/upload.png)
 
 
-### Submission File Statuses
+### Submission File Status
 
-For each file, the fllowing status can be set:
+For each file, the fllowing stati can be set:
 
 - __ERROR__: there are errors in the format of the file
 - __WARNING__: there are warnings regarding the format of the file. 
