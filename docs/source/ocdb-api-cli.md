@@ -8,7 +8,7 @@ as well as managing submissions and users.
 
 ## Installation
 
-To install the CLI and API, please use following steps.
+To install the CLI and API, please follow the steps listed below.
 
 ```bash
     git clone https://github.com/eocdb/ocdb-client
@@ -97,17 +97,17 @@ api.set(server_url="[some server url]")
 ## Search Database with the Python API
 
 The method 'find_datasets' allows querying the Database for several information, using different keywords:
-- __expr__: looks for any files containing any of the words passed. Also Lucene syntax can be used (See [below](ocdb-api-cli.md#search-database-with-lucene-syntax)).
+- __expr__: looks for any files containing any of the words passed. Also Lucene syntax can be used (See below for more details)
 - __region__: looks for files containg measurements collected in the polygon defined by specified coordinates (format: "[West],[South],[East],[North]")
-- __start_time__: looks for any files containing measurement time later than the selected date (format: "2016-07-01")
-- __end_time__: looks for any files containing measurement time earlier than the selected date (format: "2019-07-01")
-- __wdepth__: looks for any files containing measurements collected within a passed range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
-- __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral
+- __start_time__: looks for any files containing measurement collected later than the selected date (format: "2016-07-01")
+- __end_time__: looks for any files containing measurement collected earlier than the selected date (format: "2019-07-01")
+- __wdepth__: looks for any files containing measurements collected within the defined range of water (bottom) depth (format:"[[min_depth],[max_depth]]")
+- __mtype__: filters radiometric data depending on wavelength option. Could be 'all', 'multispectral' or 'hyperspectral'
 - __shallow__: set to 'yes' to include also measurements indicated as done in shallow waters by the PIs (Default is 'no')
-- __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all). 
-- __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Groups](ocdb-search.md#groups) section for the complete list
+- __pmode__: can be set either to 'contains' (to filter results based on selected pgroup or variables), or to 'same_cruise' (to include measurements from cruise during which __all__ the selected groups/variables were acquired), or to 'do_not_filter' (to not filter results at all) 
+- __pgroup__: looks for files containing only certain geophysical variable types. Refer to [Search](ocdb-search.md) chapter for the complete list
 - __pname__: looks for files containing only the specified variables. A complete list of queryable variables are avaialable [here](ocdb-standard-field-unit.md)
-- __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and and data owners) 
+- __status__: set to 'PUBLISHED' to get only public available data or to 'PROCESSED' to get both public and not published data (available only for admin users and data owners) 
 - __submission_id__: looks for data submitted below the specified submission label
 - __geojson__: (Default is True)
 - __user_id__: look for data sumbmitted by the specified user (by username)
@@ -152,17 +152,17 @@ A complete and up-to-date list of the fields that can be queried is available [h
 
 ## Get Datasets
 
-The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step sgould be used. A dataset ID can be used to get actual data as in the example below:
+The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step should be used. A dataset ID can be used to get actual data as in the example below:
 
 python:
 ```python
 api.get_dataset(dataset_id='5d2433e81f59e20001aaae74', fmt='pandas')
 
 	      date	    time	     lat	    lon	depth	  ...	 tot_chl_a
-0   20140723	12:30:00	-19.9743	57.4493	    0	     	  0.05280
+0     20140723	12:30:00	-19.9743	57.4493	    0	     	  0.05280
 1	  20140723	14:00:00	-19.7216	57.6288	    0		      0.04767
 2	  20140723	17:00:00	-19.2121	57.9908	    0		      0.05028
-3	  20140723	20:00:00	-18.7211	58.3397	    0	       	0.04490
+3	  20140723	20:00:00	-18.7211	58.3397	    0             0.04490
 4	  20140723	23:00:00	-18.2994	58.7023	    0		      0.07901
 
 ...
@@ -197,7 +197,7 @@ To add a user, specify the required user information
 
 cli:
 ```bash
-ocdb-cli user add -u scott -p Scottpass -fn Scott -ln Tiger -em Scott_email -ph 012345-78910 -r submit
+ocdb-cli user add -u <user_name> -p <password> -fn <user's first name> -ln <user's family name> -em <user's email> -ph <user's phone number> -r <role>
 ```
 
 python:
@@ -205,7 +205,7 @@ python:
 api.add_user(username='<user_name>', password='<passwd>', roles=['<role1>, <role2>'])
 ```
 
-Role could be either submit (for any users) or admin (for admin users only)
+<role1> could be either 'submit' (for any users) or 'admin' (for admin users only).
 You need to have administrative access rights to be able to complete this action.
 
 
@@ -213,7 +213,7 @@ __Get User Information__:
 
 cli:
 ```bash
-ocdb-cli user get --user scott
+ocdb-cli user get --user <user_name>
 ```
 
 python:
@@ -229,7 +229,7 @@ __Delete a User__:
 
 cli:
 ```bash
-ocdb-cli user delete --user scott
+ocdb-cli user delete --user <user_name>
 ```
 
 python:
@@ -243,7 +243,7 @@ __Update an Existing User__:
 
 cli:
 ```bash
-ocdb-cli user update --key last_name --value <your value>
+ocdb-cli user update --key <field to be updated> --value <your value>
 ```
 
 python:
@@ -309,18 +309,18 @@ Users can delete their own submissions without restrictions.
 __Update Submission Status__:
 
 This command allows to manipulate the status assigned to any submission. Some status changes will have impact on
-whether the data are searchable or not.
+whether the data are searchable or not in the Database.
 
 The following list shows the different stati and the impact on the accessibility when changing them:
 
 - SUBMITTED: A dataset has been submitted. Usually also means that the data has issues. This will trigger
   the automated validation process
-- VALIDATED: The data has been submitted and passed the quality checks (even in case any warnings were raised)
-- PROCESSED: The data has been processed into the database and is findable, but only to admin users and the user who submetted it
+- VALIDATED: The data has been submitted and passed the quality checks (even in case any warning was raised)
+- PROCESSED: The data has been processed into the database and is searchable, but only by admin users and the user who submetted it
 - PUBLISHED: The data has been processed into the database and is publicly available
 - CANCELED: The data submission has been canceled. Setting this status will remove the data from the database and will
-  not be findable anymore. It can be still reprocessed again into the database
-- PAUSED: The user pauses the submission. This indicates that the admin users shall not publish or process the data
+  not be findable anymore. It can be still reprocessed again into the Database
+- PAUSED: The user paused the submission. This indicates that the admin users shall not publish or process the data
 
 cli:
 ```bash
@@ -340,8 +340,8 @@ Users can submit, cancel and pause their own submissions without restrictions.
 __Download Submission File__:
 
 
-This command will download a single submission file. Please be aware that the version of the file is that of the submission
-status. Do not use this feature to download data, instead use the "dataset" API.
+This command will download a single submission file. Please be aware that the version of the file is the one of the submission
+status. Do not use this feature to download data, instead use the "get_dataset" function of the API.
 
 cli:
 ```bash
@@ -358,7 +358,7 @@ api.download_submission_file(<submission-id>, <index>)
 __Upload Submission File__:
 
 
-The aim of this feature is to enable users and admin to replace an existing submission file. You can
+The aim of this feature is to enable users to replace an existing submission file. You can
 replace both documents and measurements.
 
 
