@@ -5,13 +5,14 @@ The main feature of the OCDB Database system is the stewardship of in-situ FRM d
 
 ## Get Data: Search
 
-Only those data are available in searches which were elected for publication by their submitter. 
 The OCDB WebUI offers a _Search_ interface. 
-Data can be searched by acquisition date, product groups (listed [here](ocdb-search.md#groups)) and a _Search_ text field. 
+Data can be searched by acquisition date, product groups and a _Search_ text field. 
 
 In the _Search_ text field, users can enter any word(s) that will be used to screen the Database for any file containing that word(s). This field also allows the use of the so-called Lucene syntax which enables searches for specific field values and also allows chaining.
 
-Please refer to the [__Search__](ocdb-search.md) chapter, for more details around the Lucene search syntax.
+Please refer to the [__Search__](ocdb-search.md) chapter, for a complete list of product groups and more details about the Lucene search syntax.
+
+Note that only those data which were elected for publication by their submitter, are available in searches. 
 
 ### Set region
 Region for search can be set both either by entering coordinates by clicking on 'MANUALLY ENTER COORDINATES' button, or by drawing a polygon on the map.
@@ -25,7 +26,7 @@ In advanced options menu, __single products__ can be selected (a list of standar
 ![](static/webui/advanced_options.png)
 
 ### Save search
-Any query can be saved for replicating the same search in the future (search options are saved, not the results!). Clicking on _SAVE SEARCH_ and assigning a name to it. Search query can be edited and/or shared by clicking on _<>_ button.
+Any query can be saved for replicating the same search in the future (search options are saved, not the results!). Click on _SAVE SEARCH_ and assign a name to it. Search query can be edited and/or shared by clicking on _<>_ button.
 
 ![](static/webui/save_search.png)
 
@@ -43,18 +44,18 @@ where submission files will be stored under. The submission label will univocall
 ![](static/webui/submission_dialog.png)
 
 Clicking on _Publish Data (Y)_ the user agrees to publish the data right after the submission and the quality check process. 
-Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. Leaving the field empty will not allow the publication at all.
-Data for which the publication is not agreed are ingested into the Database but accessible only to the Database administrators and the user who provided the files. An agreement to publish can also be provided anytime in the future by contacting ops@eumetsat.int.
+Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. 
+Data for which the publication is not agreed are ingested into the Database but accessible only to the Database administrators and the owner of the data. An agreement to publish can also be provided anytime in the future by contacting ops@eumetsat.int.
 
-Drag and Copy or Select measurement files and documentation in the dedicated windows. File format and documentation required are described [here](ocdb-submission-format.md).
+Drag and Copy or Select measurement files and documentation in the dedicated windows. File format and documentation required are described [here](ocdb-contribute.md).
 Click on _SUBMIT_ to initiate the validation process.
-Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-rules.md)
+Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md)
 Click on _List Files_ available among _Actions_ tools to see the results of the validation, shown for each file.
 
 ![](static/webui/list_ex.png)
 
 In case of errors or warnings, for each file, click on _List Import Issues_ ![](static/webui/list.png) to show the list of error and warning messages.
-Single files can be thus download ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and validated again.
+Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and validated again.
 
 In case of errors, the status of the submission is set to _SUBMITTED_. Submissions containing errors are not further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
@@ -75,7 +76,7 @@ __List Files__:
 
 It shows a table of selected submission files. Actions are applicable for each file (see _Submission File Actions_ section below).
 
-![listf2](static/webui/list_ex.png)
+![](static/webui/list_ex.png)
 
 __Process Data__ (Admin users only):
 
@@ -87,26 +88,26 @@ __Publish Data__ (Admin users only):
 
 ![](static/webui/publish.png)
 
-With _Publish Data_ data are processed (if not processed yet) into the Database and the status of the data is set to __PUBLISHED__ and is, therefore, searchable by the public in the Database. The publishing process checks whether the data has been already processed, to avoid data duplication.
+With _Publish Data_ data are processed (if not processed yet) into the Database and the status of the data is set to __PUBLISHED__ and data are, therefore, searchable by the public in the Database. The publishing process checks whether the data has been already processed, to avoid data duplication.
 
 __Delete Submission__ (Admin users only):
 
 ![](static/webui/delete.png)
 
-The whole submission is deleted, including processed/published data from the search database.
+The whole submission is deleted, including processed/published data from the database.
  
 __Halt Restart Submission__:
 
 ![](static/webui/play.png)
 
-The user is able to halt a submission. This will denote the administrators that the user wished that the submission is __NOT__ to be processed. Once the process is halted, a __Restart__ button will appear, and user can use it to comunicate submission can be now processed.
+The user is able to halt a submission. This will denote the administrators that the user wishes that the submission is __NOT__ to be processed. Once the process is halted, a __Restart__ button will appear, and user can use it to comunicate submission can be now processed.
 
 __Cancel Submission__ (Admin users only):
 
 Cancelling the submission allows to delete the database entries linked to this submission, keeping submission files.
 This data can be anytime re-processed into the Database from the _Submit_ page.
 
-![list](static/webui/cancel.png)
+![](static/webui/cancel.png)
 
 ### Submission Statuses
 
@@ -120,7 +121,7 @@ Through the above actions, the following statuses for submissions can be set
 
 ### Submission File Actions
 
-When clicking on listing files for a submission the data and document files are listed. This new table provides the following actions:
+When clicking on listing files, for a submission the data and document files are listed. This new table provides the following actions:
 
 __List Import Issues__:
 
