@@ -84,19 +84,19 @@ Documents can be submitted at the same time of data files via the [Database webU
 
 ## Data Quality
 
-Data submitted to the Database should be calibrated, depth-adjusted, unbinned, after quality checked analysis has been performed and bad quality measurements have been excluded. The process used to derive values provided and to perform the quality check analysis should be fully desribed in the documentation.
+Data submitted to the Database should be calibrated, depth-adjusted, unbinned, after quality checked analysis has been performed and bad quality measurements have been excluded. The process used to derive values provided and to perform the quality check analysis should be fully described in the documentation.
 Any correction applied to data (e.g. normalization by surface irradiance, self-shading effect corrections etc.) should be listed and methods described.
 
-On the other hand, a further analysis is done by Database administrators, after data has been submitted to the system and before it is processed into the Database. 
-This analysis allow to label each measurement or set of measurements with a good quaity flag, adding a boolean variable to the data '[field_name]_qa' being 1 for 'good' data and 0 for 'questionable' data.
+On the other hand, a further analysis is done by Database administrators, after data has been submitted to the system, and before it is processed into the Database. 
+This analysis allows to label each measurement or set of measurements with a good quaity flag, adding a boolean variable to the data '[field_name]_qa' being 1 for 'good' data and 0 for 'questionable' data.
 The analysis is based on the completeness of protocol and quality check analysis description as well as some few further checks for:
 - data satus (should be the final version of data)
 - clear sun and low cloudiness conditions and low Irradiance variability (for each cast) for radiometric measurements
 - outliers removal
 
-For this reason, users are strongly recommended to submit together with data, complete protocols and analysis descriptions, as well as any ancillary data they could provide.
+For this reason, users are strongly recommended to submit, together with  thedata, complete protocols and analysis descriptions, as well as any ancillary data they could provide.
 
-Finally, information about uncertainty and/or replicates, should be reported (e.g. as standard deviation fiels (e.g., <measurement>_sd, like "chl_sd"), together with bincount (e.g. <measurement>_bincount). 
+Finally, information about uncertainty and/or replicates, should be reported (e.g. as standard deviation fields (named <name_field>_sd, e.g. "chl_sd"), together with bincount (e.g. <name_field>_bincount). 
 
 Users submitting data could be of course involved in the quality check process by the administrator, whenever additional information or feedback are required.
 
