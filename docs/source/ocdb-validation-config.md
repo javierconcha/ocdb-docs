@@ -1,6 +1,6 @@
 # Validation configuration
 
-Every _in-situ_ measurement document sumbitted to the OCDB system is validated against a list of rules before being accepted by the system. 
+Every _in-situ_ measurement file sumbitted to the OCDB system is validated against a list of rules before being accepted by the system. 
 The validation rules can be freely configured by admin users using the configuration file "validation_config.json"
 
 The validation system checks both header fields and measurement records using the rules defined in the configuration file. Each rule relates to a section in the configuration file. 
@@ -278,4 +278,4 @@ The possible tags for each validation rule is listed above in the descriptions o
 ### Modifiers
 A variable name can optionally be followed by any number of digits to e.g. denote the wavelength at which the measurement was taken. The name in the configuraiton file must be the raw name, 
 without any suffix nor modifier; these are automatically stripped for the validation chores.
-A list of acceptable suffix and modifiers are listed [here](ocdb-suffix-modifiers.md)
+A list of acceptable suffix and modifiers are listed [here](ocdb-suffix-modifiers.md).
