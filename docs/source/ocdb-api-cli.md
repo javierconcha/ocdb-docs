@@ -90,7 +90,7 @@ api.config
 
 #Out[11]: {'server_url': 'https://ocdb.eumetsat.int'}
 
-api.set(server_url="[some server url]")
+api.set_config_param('server_url','[some server url]')
 
 ```
 
