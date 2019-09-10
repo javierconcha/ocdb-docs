@@ -8,7 +8,7 @@ Users need to be registered to the Database in order to submit data.
 Data submission can be done either via the [Database webUI ](ocdb-webui.md) or the [Command Line Interface as well as the Python API](ocdb-api-cli.md).
 
 ## Data Submission Policy
-For data submission policy please refers to the [Applicable Data Policies](ocdb-data-access-policy.md) page.
+For data submission policy please refers to the [Applicable Data Policies](ocdb-data-policy.md) page.
 
 
 ## Data Format
