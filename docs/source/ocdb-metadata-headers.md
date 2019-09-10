@@ -49,34 +49,33 @@ The following headers are required to be pass validation check
 
 
 ## Optional Headers
-The following headers are optional. Some of them, if not provided, are automatically added by the system, after validation
+The following headers are optional. Some of them, if not provided, are added by OCDB staff, after validation
 
-* **start_date** The earliest date measurements in the file were collected (format: 'YYYYMMDD'). Added during submission processing if not provided.
+* **start_date** The earliest date measurements in the file were collected (format: 'YYYYMMDD'). Added by OCDB staff after validation processing if not provided.
  
-* **end_date** The latest date measurements in the file were collected (format: 'YYYYMMDD'). Added during submission processing if not provided.
+* **end_date** The latest date measurements in the file were collected (format: 'YYYYMMDD'). Added by OCDB staff after validation processing if not provided.
 
-* **start_time** The earliest time measurements were collected on 'start_date' (format: 'HH:MM:SS [GMT]'), in Greenwich Mean Time (GMT). Added during submission processing if not provided.
+* **start_time** The earliest time measurements were collected on 'start_date' (format: 'HH:MM:SS [GMT]'), in Greenwich Mean Time (GMT). Added by OCDB staff after validation processing if not provided.
 
-* **end_time**
-The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GMT]'), in GMT. Added during submission processing if not provided.
+* **end_time** The latest time measurements were collected on 'end_date' (format: 'HH:MM:SS [GMT]'), in GMT. Added by OCDB staff after validation processing if not provided.
 
-* **north_latitude** Maximum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added during submission processing if not provided.
+* **north_latitude** Maximum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added by OCDB staff after validation processing if not provided.
  
-* **south_latitude** Minimum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added during submission processing if not provided.
+* **south_latitude** Minimum latidude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for latitudes south of the equator. Added by OCDB staff after validation processing if not provided.
 
-* **east_longitude** Maximum longitude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for longitude west of the Prime Meridian. Added during submission processing if not provided.
+* **east_longitude** Maximum longitude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for longitude west of the Prime Meridian. Added by OCDB staff after validation processing if not provided.
 
-* **west_longitude** Minimum longitude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for longitude west of the Prime Meridian. Added during submission processing if not provided.
+* **west_longitude** Minimum longitude measurements in the file were collected (in decimal degrees, with a '[DEG]' trailer). Use negative values for longitude west of the Prime Meridian. Added by OCDB staff after validation processing if not provided.
 
 * **station** The name of the station where measurements in the file were collected.
 
-* **data_file_name** The name of the data file submitted. Added during submission processing if not provided. 
+* **data_file_name** The name of the data file submitted. Added by OCDB staff during submission processing if not provided. 
 
 * **data_status** The condition, or status, of the data file. The value _preliminary_ is used when the data are new and the investigator intends to analyze the data further. The value _update_ indicates the data are being resubmitted and informs users that an additional resubmission will occur in the future. The value final is used when the investigator has no intention of revisiting the data set. Recommended
 
 * **identifier_product_doi** The DOI (Digital Object Identifier; see http://www.doi.org/) associated with the experiment or the Dataset, if availabe
 
-* **wavelength_option** Set to hyperspectral or multispectral, Required for products that have an associated wavelength.
+* **wavelength_option** Set to hyperspectral or multispectral. Required for products that have an associated wavelength.
 
 * **instrument_model** Comma seprataed list of the model of the instruments whose measurements are being reported. Replace any spaces in the names with underscores. Recommended.
 
