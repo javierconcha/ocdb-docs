@@ -38,8 +38,8 @@ MDB [PLATFORM] [LEVEL] [TYPE] [startDate] [endDate].nc
 where:
 - PLATFORM indicates satellite: A or B
 - LEVEL indicates OLCI products level: 'L1' for EFR products or 'L2' for WFR products
-- TYPE indicates in itu data type: 'AERONET_version3', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
-- [startDate]_[endDate]: the time range covered by the file
+- TYPE indicates _in-situ_ data type: 'AERONET_version3', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
+- [startDate]_[endDate] indicates the time range covered by the file
 
 For example, MDB_A_L2_AERONET_version3_20160401_20160430.nc includes all matchups for AERONET-OC (version 3) for April 2016, with OLCI-A Level-2 products.
 
@@ -49,6 +49,12 @@ Monthly, MDB files are genereted through a Python module (called MDB_Builder).
 The diagram below shows at high level the workflow followed in order to build MDB files.
 
 ![](static/webui/mdb_flow.png)
+
+### Preparing OLCI data
+OLCI Level-1 and Level-2 FR NTC products are systematically extracted over AERONET-OC sites and MOBY position (the second one, updated on a daily basis), stored as a single NetCDF files (one for each extraction).
+The extraction is also performed occasionally, based on _in-situ_ measurement time and location, derived from SeaBASS and Copernicus OCDB Databases.
+If for an extraction exists at least one _in-situ_ measurement within 24 hours before and after its acquisition time, the extraction is included in the MDB.
+NetCDF files contain all the original products excepted for, for Level-2 MDB files, water reflectance, converted into Rrs, after BRDF correction for the first 11 bands. BRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). Iteration is not required, since CHL_OC4ME product is used as input.
 
 ### Preparing in situ data: AERONET-OC
 AERONET-OC data (downloaded from https://aeronet.gsfc.nasa.gov/cgi-bin/draw_map_display_seaprism_v3) are stored, for each site, in three different csv files containing original data up to, respectively, level 1.0, level 1.5 and level 2.0 quality assured data, as distributed from AERONET-OC network.
@@ -64,15 +70,11 @@ As for each station normalized water leaving reflectance (corrected for f/Q fact
 ### Preparing in situ data: MOBY
 MOBY data are stored in ascii files, downloaded from MOBY Gold Directory (https://www.star.nesdis.noaa.gov/sod/moby/gold/). Normalised water leaving reflectance (Lwn) from MOBY is already provided at OLCI bands from 1 to 12, resampled according to S3A average OLCI Spectral Response Functions (SRFs). In order to retrieve Rrs, Lwn is thus divided by extraterrestrial solar irradiance (F0), and corrected for BRDF effect, as in Equation 2:
 
-    ```
-    Equation 2: Lwn(λ)/F0(λ)*BRDF(λ)
-    ```
+```
+Equation 2: Lwn(λ)/F0(λ)*BRDF(λ)
+```
 
-where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, derived from top and middle arm measurements, when available, from top and bottom arm measurements otherwise. F0(λ) values are provided in OLCI L2 SRFs files. BRDF factors are computed through the same algorithm used in OLCI standard products, using Look-Up Tables provided in OLCI OCP ADF. For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values (Lwn(λ)/F0(λ)) before BRDF correction. 
-
-
-## MDB variables list
-
+where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, derived from top and middle arm measurements, when available, from top and bottom arm measurements otherwise. F0(λ) values are provided in OLCI L2 SRFs files. BBRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values (Lwn(λ)/F0(λ)) before BRDF correction. 
 
 ## References
 - Clark, D.K., H.R. Gordon, K.J. Voss, Y. Ge, W. Broenkow, C. Trees. (1997). Validation of atmospheric correction over the oceans. Journal of Geophysical Research 102(D14): 17209-17217.
