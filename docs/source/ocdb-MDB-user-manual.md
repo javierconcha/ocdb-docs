@@ -1,12 +1,8 @@
 # Matchup Database files
 Matchups Database (MDB) netCDF files, including matchups between OLCI and _in situ_ data from AERONET-OC network, MOBY buoy or downloaded from Copernicus OCDB or NAA SeaBASS Databases.
-
 MDB files are provided through FTP, directly accesible from the Copernicus OCDB webpage.
-
 For AERONET-OC and MOBY they are organised by month and updated at least on a monthly basis.
-
 For _in-situ_ data downloaded from OCDB or SeaBASS, they are organised by products and updated on a monthly basis as well.
-
 A short description of the content as well as the format follows.
 
 ## MDBs content
