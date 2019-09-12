@@ -62,9 +62,9 @@ AERONET-OC data (downloaded from https://aeronet.gsfc.nasa.gov/cgi-bin/draw_map_
 As for each station normalized water leaving reflectance (corrected for f/Q factor) Lwn_fQ at several bands is provided, with different number of channels or slight different central wavelengths for same band, sometimes different from OLCI bands, data need to be reorganised to provide Remote Sensing Reflectance (Rrs) at OLCI corresponding bands, before being ingested into MDB files. The whole dataset is thus prepared through the following steps:
 - Level 1.5 and 2.0 data are merged together
 - Rrs at each band "λ"  is obtained dividing Lwn_fQ by extra-atmospheric solar irradiance F0 (Thuillier et al., 2003), as in Eq. 1, for bands with central wavelength deviating from OLCI nominal central bands up to 1 nm in the visible. For longer wavelength the limit is relaxed up to 5 nm.
-    ```
-    Equation 1: Lw_fQn(λ)/F0(λ)
-    ```
+```
+Equation 1: Lw_fQn(λ)/F0(λ)
+```
 - Band-shift correction (Mélin & Sclep, 2015) is applied when distance between central OLCI band and AERONET-OC central band wavelength is larger. 
 
 ### Preparing in situ data: MOBY

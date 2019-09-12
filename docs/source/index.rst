@@ -41,3 +41,4 @@ The Database has been designed in order to guarantee easy access to data, a stro
    ocdb-data-policy
    ocdb-MDB-user-manual
    ocdb-PI-affiliation-experiment-cruise
+   ocdb-MDB-user-manual.md
