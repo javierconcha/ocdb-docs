@@ -1,11 +1,15 @@
 # Matchup Database files
 Matchups Database (MDB) netCDF files, including matchups between OLCI and _in situ_ data from AERONET-OC network, MOBY buoy or downloaded from Copernicus OCDB or NAA SeaBASS Databases.
+
 MDB files are provided through FTP, directly accesible from the Copernicus OCDB webpage.
+
 For AERONET-OC and MOBY they are organised by month and updated at least on a monthly basis.
+
 For _in-situ_ data downloaded from OCDB or SeaBASS, they are organised by products and updated on a monthly basis as well.
+
 A short description of the content as well as the format follows.
 
-## MDBs content
+## MDB files content
 Each MDB file contains: 
 
 - All OLCI level-2 or Level-1 Full Resolution products, **25x25 pixels** centered on site/measurement point
@@ -28,7 +32,7 @@ Note that MDB content is **extended** beyond the data required for the baseline 
 Users have to apply their own analyses to extract matchups, that are not screened neither for pixel validity nor applying any other criteria than the 24 hour time difference limit.
 For baseline validations, the **recommended matchup protocols** should be followed.
 
-## MDBs naming convention
+## MDB files naming convention
 Each MDB file is named using the following template:
 MDB [PLATFORM] [LEVEL] [TYPE] [startDate] [endDate].nc
 where:
@@ -39,7 +43,7 @@ where:
 
 For example, MDB_A_L2_AERONET_version3_20160401_20160430.nc includes all matchups for AERONET-OC (version 3) for April 2016, with OLCI-A Level-2 products.
 
-## MDB preparation
+## MDB files preparation
 Monthly, MDB files are genereted through a Python module (called MDB_Builder).
 
 The diagram below shows at high level the workflow followed in order to build MDB files.
@@ -74,6 +78,7 @@ where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, 
 
 ## References
 - Clark, D.K., H.R. Gordon, K.J. Voss, Y. Ge, W. Broenkow, C. Trees. (1997). Validation of atmospheric correction over the oceans. Journal of Geophysical Research 102(D14): 17209-17217.
+- Price-Whelan et al. (2018). The Astropy Project: Building an Open-science Project and Status of the v2.0 Core Package. The Astronomical Journal 156: 123-141.
 - Thuillier, G., M. Hers´e, P. C. Simon, D. Labs, H. Mandel, D. Gillotay, & T. Foujols. (2003). The solar spectral irradiance from 200 to 2400 nm as measured by the SOLSPEC spectrometer from the ATLAS 1-2-3 and EURECA missions. Solar Physics 214: 1-22.
 - Zibordi, G., F. Mélin, J. Berthon, B. Holben, I. Slutsker, D. Giles, D. D’Alimonte, D. Vandemark, H. Feng, G. Schuster, B.E. Fabbri, S. Kaitala, and J. Seppälä (2009). AERONET-OC: A Network for the Validation of Ocean Color Primary Products. J. Atmos. Oceanic Technol. 26: 1634–1651.
-- Price-Whelan et al. (2018). The Astropy Project: Building an Open-science Project and Status of the v2.0 Core Package. The Astronomical Journal 156: 123-141.
+
