@@ -11,7 +11,7 @@ as well as managing submissions and users.
 It is possible to install the CLI and API via conda:
 
 ```bash
-    conda install -c ocdb -c conda-forge ocdb-client
+conda install -c ocdb -c conda-forge ocdb-client
 ```
 
 Once that is done, you can test whether it is running by
