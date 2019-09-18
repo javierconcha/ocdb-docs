@@ -324,7 +324,7 @@ ocdb-cli sbm download --submission-id <submission-id> --index <index>
 
 python
 ```python
-api.download_submission_file(<submission-id>, <index>)
+api.download_submission_file(<submission-id>, <index>, out_fn = <local file name>)
 ```
 
 
