@@ -8,37 +8,10 @@ as well as managing submissions and users.
 
 ## Installation
 
-To install the CLI and API, please follow the steps listed below.
+It is possible to install the CLI and API via conda:
 
 ```bash
-    git clone https://github.com/eocdb/ocdb-client
-    cd ocdb-client
-    conda env create
-    [conda] activate ocdb
-    python setup.py install
-```
-
-## How to start it
-
-The OCDB client has been installed into a so-called conda environment. In 
-order to start it you will always have to activate that envrionment using the following command:
-
-__Linux__:
-
-```bash
-conda activate ocdb
-```
-
-or on older conda versions:
-
-```bash
-source activate ocdb
-```
-
-__Windows__:
-
-```bash
-activate ocdb
+    conda install -c ocdb -c conda-forge ocdb-client
 ```
 
 Once that is done, you can test whether it is running by
