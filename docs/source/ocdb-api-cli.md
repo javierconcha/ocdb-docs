@@ -251,7 +251,7 @@ __Get Submissions for a specific User__:
 
 cli:
 ```bash
-ocdb-cli sbm user --user_name <user-name>
+ocdb-cli sbm user <user-name>
 ```
 
 python:
@@ -268,7 +268,7 @@ __Delete Submission__:
 
 cli:
 ```bash
-ocdb-cli sbm delete --submission-id <submission-id>
+ocdb-cli sbm delete <submission-id>
 ```
 
 python:
@@ -318,9 +318,10 @@ status. Do not use this feature to download data, instead use the "get_dataset" 
 
 cli:
 ```bash
-ocdb-cli sbm download --submission-id <submission-id> --index <index>
+ocdb-cli sbmfile download --submission_id <submission_id> --index <index> [--out-file <name>.zip]
 ```
 
+By default files are downloaded as 'download.zip'
 
 python
 ```python
