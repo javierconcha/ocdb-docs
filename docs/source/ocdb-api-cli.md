@@ -231,11 +231,11 @@ Users can update their own information without restrictions.
 ## Managing Submissions
 
 __Get Submission__:
-
+to get information for a specific submission
 
 cli:
 ```bash
-ocdb-cli sbm get --submission-id <submission-id>
+ocdb-cli sbm get <submission-id>
 ```
 
 python:
