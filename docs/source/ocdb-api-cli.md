@@ -250,7 +250,7 @@ to contribute data trhough a new submission.
 
 cli:
 ```bash
-ocdb-cli sbm upload "<affiliation>/<experiment>/<cruise>" <data files list> --submission_id <submission label> -ap
+ocdb-cli sbm upload "<affiliation>/<experiment>/<cruise>" <data files list> -s <submission label> -ap -d <document files list>
 ```
 -ap should be set **only** to allow data be available for the general public
 
