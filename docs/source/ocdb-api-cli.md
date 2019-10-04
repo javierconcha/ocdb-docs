@@ -85,6 +85,21 @@ The method 'find_datasets' allows querying the Database for several information,
 - __geojson__: (Default is True)
 - __user_id__: look for data sumbmitted by the specified user (by username)
 
+The results is a dictionary containing information and whole dataset related to the file containing the measurement the satisfied the search criteria.
+Dictionary keys are: 
+- *total_count*: number of datasets returned by the query
+- _datasets_: information about dataset files and the submissions they belong to
+- _query_: query parametrization
+- *dataset_ids*: ids of the returned datasets
+
+python:
+```bash
+data = api.find_datasets(region='50,45,51,46')
+data['datasets']
+
+  [{'id': '5d97112af9305e0001c6d6fc', 'path': 'LOG/IOPstudy/DS3', 'filename': 'DS3_IOPstudy.csv'}]
+
+```
 
 ## Search Database with Lucene syntax
 
