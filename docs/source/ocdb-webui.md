@@ -43,7 +43,7 @@ where submission files will be stored under. The submission label will univocall
 
 ![](static/webui/submission_dialog.png)
 
-Clicking on _Publish Data (Y)_ the user agrees to publish the data right after the submission and the quality check process. 
+Clicking on _Publish Data_ the user agrees to publish the data right after the submission and the quality check process. 
 Selecting a date in _Publication Date_ will delay the publication of the data belonging to this submission. 
 Data for which the publication is not agreed are ingested into the Database but accessible only to the Database administrators and the owner of the data. An agreement to publish can also be provided anytime in the future by contacting ops@eumetsat.int.
 
@@ -118,6 +118,9 @@ Through the above actions, the following stati for submissions can be set
 - __CANCELLED__: database entries linked to this submission have been canceled from the Database
 - __PROCESSED__: submission data are searchable in the Database by submission owner and admin users
 - __PUBLISHED__: submission data are searchable in the Database by anyone
+
+Whenever a submission is updated, its status in the submission page is set again accordingly to _SUBMITTED_ or _VALIDATED_. 
+On the other hand, files already published and searchable are not updated until the new/updtaed files are not processed by Database administrators, and the oldest version remains available in the meanwhile.
 
 ### Submission File Actions
 
