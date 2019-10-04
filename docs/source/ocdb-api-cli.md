@@ -245,6 +245,19 @@ Users can update their own information without restrictions.
 
 ## Managing Submissions
 
+__Upload a new submission__:
+to contribute data trhough a new submission.
+
+cli:
+```bash
+ocdb-cli sbm upload "<affiliation>/<experiment>/<cruise>" <data files list> --submission_id <submission label> -ap
+```
+-ap should be set **only** to allow data be available for the general public
+
+python:
+
+
+
 __Get Submission__:
 to get information for a specific submission
 
