@@ -236,7 +236,7 @@ ocdb-cli user update --key <field to be updated> --value <your value>
 
 python:
 ```python
-api.update_user(name=<user_name>, key=<key>, value=<value>)
+api.update_user(<user_name>, key=<key>, value=<value>)
 ```
 
 You need to have administrative access rights to perform this operation for any user. 
@@ -271,7 +271,7 @@ ocdb-cli sbm user <user-name>
 
 python:
 ```python
-api.get_submissions_for_user(<user-id>)
+api.get_submissions_for_user(<user-name>)
 ```
 
 You need to have administrative access rights to perform this operation for any submission. 
