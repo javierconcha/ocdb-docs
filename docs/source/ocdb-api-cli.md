@@ -240,7 +240,20 @@ api.update_user(<user_name>, key=<key>, value=<value>)
 ```
 
 You need to have administrative access rights to perform this operation for any user. 
-Users can update their own information without restrictions.
+
+__Update password__:
+
+Any user can update his own password, after login.
+
+cli:
+```bash
+ocdb-cli user ownpwd -op <old password> -p <new password>
+```
+
+python:
+```bash
+api.change_user_login(<username>,<old_password>,<new_password>)
+```
 
 
 ## Managing Submissions
@@ -341,8 +354,8 @@ Users can submit, cancel and pause their own submissions without restrictions.
 __Download Submission File__:
 
 
-This command will download a single submission file. Please be aware that the version of the file is the one of the submission
-status. Do not use this feature to download data, instead use the "get_dataset" function of the API.
+This command will download a single submission file. Please be aware that the **version of the file is the one of the submission
+status**. Do not use this feature to download data, instead use the "get_dataset" function of the API.
 
 cli:
 ```bash
@@ -360,22 +373,36 @@ api.download_submission_file(<submission-id>, <index>, out_fn = <local file name
 __Upload Submission File__:
 
 
-The aim of this feature is to enable users to replace an existing submission file. You can
-replace both documents and measurements.
+Both measurement and documentation files can be added to **an existing submission**
 
 
-cli
+cli:
 ```bash
-ocdb-cli sbm upload --submission-id <submission-id> --index <index> --file <file>
+ocdb-cli sbmfile add --submission-id <submission_label> --file <local_file_path>  -t <type>
 ```
-
 
 python
 ```python
-api.upload_submission_file(<submission-id>, <index>, <file>)
+api.upload_submission_file(<submission_label>,<local_file>,<type>)
+```
+where _type_ could be 'MEASUREMENT' or 'DOCUMENT'
+
+
+Both **existing measurement and documentation files** can be added to updated, replacing them with a new file from local.
+
+cli:
+```bash
+ocdb-cli sbmfile update --submission-id <submission_label> --file <local_file_path>  --index <index>
 ```
 
-You need to have administrative access rights to perform this operation for any submission file. 
+python
+```python
+api.upload_submission_file(<submission_label>,<local_file>,<type>,<index>)
+```
+
+where *index* is the index of the file in the submission to be updated.
+
+
 Users can update their own submission files without restrictions.
 
 
