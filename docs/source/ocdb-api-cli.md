@@ -268,7 +268,11 @@ ocdb-cli sbm upload "<affiliation>/<experiment>/<cruise>" <data files list> -s <
 -ap should be set **only** to allow data be available for the general public
 
 python:
-
+```python
+api.upload_submission(store_path='<affilition>/<experiment>/<cruise>',dataset_files=('<file_path1>','<file_path2>',...),submission_id='<submission_label>', doc_files=('<file_path1>','<file_path2>',...),[allow_publication = <True/False>],[publication_date = '<yyyy/mm/dd>'])
+```
+*allow_publication* should be set to True **only** to allow data be available for the general public
+*publication_date* should be set only when data can be available for the general public but only after the specified date
 
 
 __Get Submission__:
