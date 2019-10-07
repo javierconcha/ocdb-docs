@@ -140,11 +140,16 @@ A complete and up-to-date list of the fields that can be queried is available [h
 
 ## Get Datasets
 
-The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step should be used. A dataset ID can be used to get actual data as in the example below:
+The search engine returns a list of datasets. In order to retrieve the actual data, dataset IDs obtained through the previous step, using cli ds find function and api find_datasets method, should be used. A dataset ID can be used to get actual data as in the example below:
+
+bash:
+```bash
+ocdb-cli ds get --id 5d971154f9305e0001c6d700
+```
 
 python:
 ```python
-api.get_dataset(dataset_id='5d2433e81f59e20001aaae74', fmt='pandas')
+api.get_dataset(dataset_id='5d971154f9305e0001c6d700', fmt='pandas')
 
 	      date	    time	     lat	    lon	depth	  ...	 tot_chl_a
 0     20140723	12:30:00	-19.9743	57.4493	    0	     	  0.05280
@@ -201,12 +206,12 @@ __Get User Information__:
 
 cli:
 ```bash
-ocdb-cli user get --user <user_name>
+ocdb-cli user get --user scott
 ```
 
 python:
 ```python
-api.get_user(username=<user_name>)
+api.get_user(username='scott')
 ```
 
 You need to have administrative access rights to perform this operation for any user. 
@@ -217,12 +222,12 @@ __Delete a User__:
 
 cli:
 ```bash
-ocdb-cli user delete --user <user_name>
+ocdb-cli user delete --user scott
 ```
 
 python:
 ```python
-api.delete_user(name=<user_name>)
+api.delete_user(name='scott')
 ```
 You need to have administrative access rights to be able to complete this action.
 
@@ -280,12 +285,12 @@ to get information for a specific submission
 
 cli:
 ```bash
-ocdb-cli sbm get <submission-id>
+ocdb-cli sbm get IOPstudy2
 ```
 
 python:
 ```python
-api.get_submission(<submission-id>)
+api.get_submission('IOPstudy2')
 ```
 
 You need to have administrative access rights to perform this operation for any submission. 
@@ -296,12 +301,12 @@ __Get Submissions for a specific User__:
 
 cli:
 ```bash
-ocdb-cli sbm user <user-name>
+ocdb-cli sbm user scott
 ```
 
 python:
 ```python
-api.get_submissions_for_user(<user-name>)
+api.get_submissions_for_user('scott')
 ```
 
 You need to have administrative access rights to perform this operation for any submission. 
@@ -363,14 +368,14 @@ status**. Do not use this feature to download data, instead use the "get_dataset
 
 cli:
 ```bash
-ocdb-cli sbmfile download --submission_id <submission_id> --index <index> [--out-file <name>.zip]
+ocdb-cli sbmfile download --submission_id IOPstudy2 --index <index> [--out-file IOPstudy2.zip]
 ```
 
 By default files are downloaded as 'download.zip'
 
 python
 ```python
-api.download_submission_file(<submission-id>, <index>, out_fn = <local file name>)
+api.download_submission_file('IOPstudy2', 0, out_fn = IOPstudy2.zip)
 ```
 
 
@@ -417,72 +422,4 @@ __Get License__
 
 ```bash
 ocdb-cli lic
-```
-
-
-## List of functions/CLI commands
-
-
-```eval_rst
-+-----------+----+--------+--------------------------------------------+
-| Operation | CL | API    | Parameters                                 |
-|           | I  |        |                                            |
-+===========+====+========+============================================+
-| Upload    | sb | upload | store_path: str, dataset_files:            |
-| Submissio | m  | _submi | Sequence[str], doc_files: Sequence[str],   |
-| n         | up | ssion  | path: str, submission_id: str,             |
-|           | lo |        | publication_date: str, allow_publication:  |
-|           | ad |        | bool                                       |
-+-----------+----+--------+--------------------------------------------+
-| Download  | ds | downlo | ids: List[str], download_docs: bool,       |
-| datasets  | do | ad_dat | out_fn: Optional[str]                      |
-| by Ids    | wn | asets_ |                                            |
-|           | lo | by_ids |                                            |
-|           | ad |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Delete    | ds | delete | submission_id: str                         |
-| datasets  | de | _datas |                                            |
-| by        | l- | ets_by |                                            |
-| submissio | by | _submi |                                            |
-| n         | -s | ssion  |                                            |
-|           | b  |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Get       | ds | get_da | submission_id: str                         |
-| datasets  | ge | tasets |                                            |
-| by        | t- | _by_su |                                            |
-| submissio | by | bmissi |                                            |
-| n         | -s | on     |                                            |
-|           | b  |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Get a     | ds | get_da | dataset_id: str, fmt: str                  |
-| single    | ge | taset  |                                            |
-| dataset   | t  |        |                                            |
-| by ID     |    |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Find      | ds | find_d |                                            |
-| datasets  | fi | ataset |                                            |
-|           | nd | s      |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Get       | sb | get_su | submission_id: str                         |
-| submissio | m  | bmissi |                                            |
-| n         | ge | on     |                                            |
-| by ID     | t  |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Get       | sb | get_su | user_id: str                               |
-| submissio | m  | bmissi |                                            |
-| ns        | us | ons_fo |                                            |
-| for user  | er | r_user |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Update    | sb | update | submission_id: str, status: str            |
-| status of | m  | _submi |                                            |
-| a         | st | ssion_ |                                            |
-| submissio | at | status |                                            |
-| n         | us |        |                                            |
-+-----------+----+--------+--------------------------------------------+
-| Delete an | sb | delete | submission_id: str                         |
-| entire    | m  | _submi |                                            |
-| submissio | de | ssion  |                                            |
-| n         | le |        |                                            |
-|           | te |        |                                            |
-+-----------+----+--------+--------------------------------------------+
 ```
