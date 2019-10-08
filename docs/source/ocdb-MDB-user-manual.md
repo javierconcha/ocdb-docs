@@ -76,9 +76,78 @@ Equation 2: Lwn(λ)/F0(λ)*BRDF(λ)
 
 where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, derived from top and middle arm measurements, when available, from top and bottom arm measurements otherwise. F0(λ) values are provided in OLCI L2 SRFs files. BBRDF factors are retrieved using the same algorithm implemented in OLCI Level-2 Ocean Colour algorithm (chlorophyll concentration based), using Look-Up Tables (LUTs) provided in S3A Ocean colour parameters (OCP) Auxiliary Data File (ADF). For the calculation of BRDF factors, wind speed provided in OLCI products is used (the mean values for the 25*25 pixels extraction); solar position is obtained by MOBY measurement time and location through _astropy_ Python package (Price-Whelan et al., 2018); chlorophyll concentration is obtained applying OLCI OC4ME algorithm on Rrs values (Lwn(λ)/F0(λ)) before BRDF correction. 
 
+## Preparing in situ data: other sources
+Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for protocols complience and quality.
+
+### Attenuation coefficient Kd
+
+Kd(490) values are derived from Ed(490) profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. Only profiles with synchronous measurements of surface irradiance Es(490) and down-welling irradiance Ed(490), with at least one measurement within the first 5 meters below water are included. Es channels are considered matching Ed channels if their central wavelength differs less no more than 12 nm.
+	Ed(490,z) profiles and Es(490) measurements are first obtained through resampling (according to OLCI SRFs) hyperspectral data or selecting the closest band within ±3 nm from multispectral data. Data are flagged as poor quality if the relative difference between the maximum and the minimum values of Es exceeds the 25%. 
+	
+	Profiles along depth are sorted along depth (z) and Es value corresponding to shallowest Ed measure, usually the first in time, is taken as reference Es(490,0).
+	
+	If not already done at sourceby contributors, each value along time t is corrected for Surface Irradiance variability, multiplying for Es(490,0)/Es(490,t). 
+	In order to estimate z90 depth, as a first guess, profiles are binned every 1m and Ed(490,0-) is than extrapolated through linear fitting ln(Ed(490,z)), as a default, with z = (0,10] m or z = (0,20] if after extrapolating along 10 m depth, Kd(490) results negative .
+	
+	Subsurface irradiance Ed(490,0-) is than extrapolated through linear fitting ln(Ed(490,z)), binned every 1 m, with z = (0,10] m or z = (0,20] if after extrapolating along 10 m depth, Kd(490) results negative . Extrapolated Ed(490,0-) is thus used to estimate Es(490): if the difference between estimated and measured Es(490) exceeds 25% of average measured Es(490), the profile is discarded.  
+	The first optical attenuation length as defined by Beer’s Law, is defined as the depth where Ed(490,z90)=Ed(490,0^-) e^(-1): the closest measurement depth to z90 is thus selected.
+	Kd(490) is then retrieved as the slope of the linear fitting line for ln(Ed) from the first available measurements depth to a zmax equal at first step to z90.
+	Any measurement diverging more than 3 times the standard deviation from standard deviation respect to fitted values is excluded, to filter out outliers
+	Original Ed(490,z) profile is than plotted together with extrapolated profile for visual inspection: zmax can be manually updated to get, recursively, a new extrapolation, filtering of outliers, and a new Kd(490) value. Once the final zmax is selected, the correspondent Kd(490) value can be saved or discarded. Kd(490) is automatically discarded if less than Kw(490) = 0.016 (Mueller, 2000).
+
+
+
+#### Remote Sensing Reflectance Rrs
+
+If **Rrs is already provided**, derived from above water measurements, protocols followed for retrieval and quality analysis is checked.
+
+If **above measurements** of water leaving radiance Lw and surface irradiance Es is provided, Remote Sensing Reflectance Rrs is derived as in the equation below.
+
+```
+Equation 3: Rrs(λ) = Lw(λ)/Es(λ)
+```
+Similarly to Werdell & Bailey, 2005, for matchups with multiple radiometric measurements in the same point, data reduction is performed to obtain a single spectrum accordingly to the following criteria. (Profiles are considered belonging to the same station if the time difference is comprised within 1 hour and 150 m (the distance is calculated from Lat/Long coordinates as Haversine distance)).
+
+If surface irradiance Es is available:
+- Rrs spectra are retained if corresponding Es is stable (variablity < 10%) along time.
+- Remaining spectra are visually inspected through a graphic interface, where are shown together with their mean spectrum.
+- Stability is also tested among the remaining measurements, both for Rrs (25%) and Es (10%) spectra at each wavelength in the visible. 
+- If Rrs and Es are both stable among measurements, their geometry mean and standard deviation (and thus of time and location) is calculated;
+- if only the Rrs is stable, the single observation with the highest surface irradiance (an indicator of the clearest sky conditions) is selected;
+- if surface irradiances are stable but Rrs is highly variable, the station is discarded.
+
+If only Rrs is provided:
+- if Rrs is stable for each station, geometry mean is calculated;
+- otherwise the whole station is discarded.
+
+If **below water measurements** are provided, Rrs is retrieved using simultaneous profiles of Es, Ed and Lu, and with any measurements within the first few meters (5 by default) below water.
+- The same approach used to derived Kd is applied for all OLCI bands to retrieve attenuation coefficient beneath surface Kd(λ,0-) from Ed(λ,z) and Klu(λ, 0-) from Lu(λ,d) profiles, setting zmax to 5 meters as a default starting point. 
+Kd(λ,0-) and Klu(λ,0-) are thus used to propagate Ed(λ,d) and Lu(λ,d) to just beneath the surface (Ed(λ,0-) and Lu(λ,0-)).
+- From beneath surface values, Rrs(λ) is thus obtained as:
+
+    ```
+    Equation 4: Rrs(λ) = Lw(λ))/(Es(λ) = (tu*Lu(λ,0-)*n^(-2))/(td^(-1)*Ed(λ,0-))
+    ```
+    where tu (0.975) and td (0.96) are respectively the upward and the downward Fresnel transmittances across air-sea interface and n (1.34) is the refractive index of seawater (Mueller et al., 2003, Austin, 1974; Wei, 2015).
+
+On the final spectrum, an additional quality assessment is performed as in Wei et al. (2016). The score can be in the range from 0 (poorest quality) to 1 (highest quality). 
+When surface irradiance is available, an additional flag, Es_stability, is provided defining ‘good’ or ‘poor’ data depending on whether the irradiance measurements is stable during the measurement time lag: ‘good’ data show, in each channel, relative difference between maximum and minimum values of Es lower than 10%.
+A final flag, defining quality as ‘poor’, ‘questionable’, or ‘good’ is then assigned to each final spectrum:
+- ‘poor’ is set whenever Es is unstable, or when the score described above is lower than 0.7
+- ‘Questionable’ is set to spectra with a score below 0.8
+
+The flag could also be forced to ‘questionable’ whenever protocols are not fully described/follow or when important ancillary data (e.g. sky conditions, wind speed) are not provided.
+For internal use, all spectra are included generating MDB files, while only ‘good’ quality spectra are included in MDBs files distributed.
+
+
 ## References
+- Austin, R. W. (1974). The remote sensing of spectral radiance from below the ocean surface. In N. G. Jerlov, & E. S. Nielson (Eds.), Optical aspects of oceanography (pp. 317– 344). London’ Academic Press.
 - Clark, D.K., H.R. Gordon, K.J. Voss, Y. Ge, W. Broenkow, C. Trees. (1997). Validation of atmospheric correction over the oceans. Journal of Geophysical Research 102(D14): 17209-17217.
 - Price-Whelan et al. (2018). The Astropy Project: Building an Open-science Project and Status of the v2.0 Core Package. The Astronomical Journal 156: 123-141.
 - Thuillier, G., M. Hers´e, P. C. Simon, D. Labs, H. Mandel, D. Gillotay, & T. Foujols. (2003). The solar spectral irradiance from 200 to 2400 nm as measured by the SOLSPEC spectrometer from the ATLAS 1-2-3 and EURECA missions. Solar Physics 214: 1-22.
+- Mueller, J. L., A. Morel, R. Frouin, C. Davis, R. Arnone, K. Carder, et al. (2003). Ocean optics protocols for satellite ocean color sensor validation, revision 4, volume III: Radiometric measurements and data analysis protocols. NASA Tech. Memo. 2003-211621/Rev4-vol.III (p. 78). Greenbelt’ NASA Goddard Space Flight Center.
+- Wei, J., Z. Lee, S. Shang (2016). A system to measure the data quality of spectral remote-sensing reflectance of aquatic environments Journal of Geophysics Research: Oceans 121: 8189–8207.
+- Wei, J., Z. Lee, M. Lewis, N. Pahlevan, M. Ondrusek, & R. Armstrong (2015). Radiance transmittance measured at the ocean surface. Optics Express 23: 11826-11837.
+- Werdell, P. J., & S. W. Bailey (2005). An improved bio-optical data set for ocean color algorithm development and satellite data product validation. Remote Sensing of Environment 98: 122−140.
 - Zibordi, G., F. Mélin, J. Berthon, B. Holben, I. Slutsker, D. Giles, D. D’Alimonte, D. Vandemark, H. Feng, G. Schuster, B.E. Fabbri, S. Kaitala, and J. Seppälä (2009). AERONET-OC: A Network for the Validation of Ocean Color Primary Products. J. Atmos. Oceanic Technol. 26: 1634–1651.
 
