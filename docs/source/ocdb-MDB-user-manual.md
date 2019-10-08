@@ -79,6 +79,32 @@ where Lwn(λ) is MOBY Lwn2 for each band, provided in the Gold directory files, 
 ## Preparing in situ data: other sources
 Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for protocols complience and quality.
 
+### Chlorophyll-a chl-a, Total suspended Matter TSM, and detrital and Colored Detrital and Dissolved Material absorption adg
+
+
+Multiple HPLC or fluorometrically/spectrophotometrically derived chl-a, TSM or adg(443) measurements along depth are optically weighted using, if available, the Kd(490) values previously retrieved or using Kd(490) values directly estimated from chlorophyll-a concentration values itself, as in Morel and Maritorena  (2001). 
+
+Kd490=0.0166+〖0.07242Y〗^0.68955
+                                                                                            Equation 6
+
+Final values are thus retrieved as:
+⟨Y⟩=(∑▒〖e^(-2k_d z)  Y(z)〗)/(∑▒e^(-2k_d z) )
+                                                                                            Equation 7
+
+
+Where Y is [chl], [TSM], or adg(443).
+For adg(443) values, if Kd(490) is not available, the shallowest value within 5 meters (or less for very turbid waters) below surface is selected.
+
+Measurements and profiles are considered belonging to the same station and thus being multiple cast if the time difference is comprised within diff_time_cast and diff_spatial_cast, as defined in the configuration file, by default 3600 sec and 150 m (the distance is calculated from Lat/Long coordinates as Haversine distance). 
+When statistics are extracted, if multiple measurement points lie in the same OLCI original PDU and pixel miniprods overlap for more than x %, the matchup with lowest time difference is retained. 
+Together with each value, the depth of the shallowest measurement is provided to be used as a further filtering criteria when extracting statistics from MDBs, and the date in which the data have been appended to overall ASCII file.
+
+
+
+Adg at 443 are derived from detrital and Gebelstoff absorption profiles (ad and ag) if not adg values are directly provided. Only data collected within 30 m depth and following the OBPG-defined (Pegau et al., 2003) protocols are retained. Spectra are visually inspected and unreasonable data excluded.
+Hyperspectral data are resampled to 443 nm, with a 10 nm fwhm, while for multispectral profiles, measurements available at central wavelength within 3 nm from OLCI’s band are chosen.
+
+
 ### Attenuation coefficient Kd
 
 Kd at 490 nm values are derived from downwelling irradiance Ed profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. 
