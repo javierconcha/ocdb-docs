@@ -81,20 +81,20 @@ Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for
 
 ### Attenuation coefficient Kd
 
-Kd(490) values are derived from Ed(490) profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. Only profiles with synchronous measurements of surface irradiance Es(490) and down-welling irradiance Ed(490), with at least one measurement within the first 5 meters below water are included. Es channels are considered matching Ed channels if their central wavelength differs less no more than 12 nm.
-	Ed(490,z) profiles and Es(490) measurements are first obtained through resampling (according to OLCI SRFs) hyperspectral data or selecting the closest band within ±3 nm from multispectral data. Data are flagged as poor quality if the relative difference between the maximum and the minimum values of Es exceeds the 25%. 
-	
-	Profiles along depth are sorted along depth (z) and Es value corresponding to shallowest Ed measure, usually the first in time, is taken as reference Es(490,0).
-	
-	If not already done at sourceby contributors, each value along time t is corrected for Surface Irradiance variability, multiplying for Es(490,0)/Es(490,t). 
-	In order to estimate z90 depth, as a first guess, profiles are binned every 1m and Ed(490,0-) is than extrapolated through linear fitting ln(Ed(490,z)), as a default, with z = (0,10] m or z = (0,20] if after extrapolating along 10 m depth, Kd(490) results negative .
-	
-	Subsurface irradiance Ed(490,0-) is than extrapolated through linear fitting ln(Ed(490,z)), binned every 1 m, with z = (0,10] m or z = (0,20] if after extrapolating along 10 m depth, Kd(490) results negative . Extrapolated Ed(490,0-) is thus used to estimate Es(490): if the difference between estimated and measured Es(490) exceeds 25% of average measured Es(490), the profile is discarded.  
-	The first optical attenuation length as defined by Beer’s Law, is defined as the depth where Ed(490,z90)=Ed(490,0^-) e^(-1): the closest measurement depth to z90 is thus selected.
-	Kd(490) is then retrieved as the slope of the linear fitting line for ln(Ed) from the first available measurements depth to a zmax equal at first step to z90.
-	Any measurement diverging more than 3 times the standard deviation from standard deviation respect to fitted values is excluded, to filter out outliers
-	Original Ed(490,z) profile is than plotted together with extrapolated profile for visual inspection: zmax can be manually updated to get, recursively, a new extrapolation, filtering of outliers, and a new Kd(490) value. Once the final zmax is selected, the correspondent Kd(490) value can be saved or discarded. Kd(490) is automatically discarded if less than Kw(490) = 0.016 (Mueller, 2000).
-
+Kd at 490 nm values are derived from downwelling irradiance Ed profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. 
+- Only profiles with synchronous measurements of surface irradiance at 490 nm Es(490) and down-welling irradiance at 490 nm along depth z, Ed(490,z), with at least one measurement within the first 5 meters below surface are included. 
+- Es channels are considered matching Ed channels if their central wavelength differs no more than 1 nm.
+- Ed(490,z) profiles and Es(490) measurements are first obtained through resampling hyperspectral data or selecting the closest band within ±1 nm from multispectral data. 
+- Data are flagged as poor quality if surface irradiance is unstable (variability > 10%). 
+- Profiles are sorted along depth (z) and Es(490) value corresponding to shallowest Ed(490) measure, usually the first in time, is taken as reference (Es(490,0)).
+- If not already done at source, each value along time t is corrected for Surface Irradiance variability, multiplying for Es(490,0)/Es(490,t). 
+- In order to estimate z90 depth, as a first guess, profiles are binned every 1m and Ed(490,0-) is than extrapolated through linear fitting ln(Ed(490,z)), as a default, with z = (0,10] m.
+- Extrapolated Ed(490,0-) is thus used to estimate Es(490): if the difference between estimated and measured Es(490) exceeds 25% of average measured Es(490), the profile is discarded.  
+- The first optical attenuation length as defined by Beer’s Law, is defined as the depth where Ed(490,z90)=Ed(490,0-) e^(-1): the closest measurement depth to z90 is thus selected.
+- Kd(490) is then retrieved as the slope of the linear fitting line for ln(Ed) from the first available measurements depth to a zmax equal at first step to z90.
+- Any measurement diverging more than 3 times the standard deviation respect to fitted values is excluded, to filter out outliers
+- Original Ed(490,z) profile is than plotted together with extrapolated profile for visual inspection: zmax can be manually updated to get, recursively, a new extrapolation, filtering of outliers, and a new Kd(490) value. 
+- Once the final zmax is selected, the correspondent Kd(490) value can be saved or discarded. Kd(490) is automatically discarded if less than Kw(490) = 0.016 (Mueller, 2000).
 
 
 #### Remote Sensing Reflectance Rrs
