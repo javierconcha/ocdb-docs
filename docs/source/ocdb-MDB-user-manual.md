@@ -119,6 +119,7 @@ If surface irradiance Es is available:
 If only Rrs is provided:
 - if Rrs is stable for each station, geometry mean is calculated;
 - otherwise the whole station is discarded.
+- On the final spectrum, an additional quality assessment is performed as in Wei et al. (2016). The score can be in the range from 0 (poorest quality) to 1 (highest quality). 
 
 If **below water measurements** are provided, Rrs is retrieved using simultaneous profiles of Es, Ed and Lu, and with any measurements within the first few meters (5 by default) below water.
 - The same approach used to derived Kd is applied for all OLCI bands to retrieve attenuation coefficient beneath surface Kd(λ,0-) from Ed(λ,z) and Klu(λ, 0-) from Lu(λ,d) profiles, setting zmax to 5 meters as a default starting point. 
@@ -130,11 +131,10 @@ Kd(λ,0-) and Klu(λ,0-) are thus used to propagate Ed(λ,d) and Lu(λ,d) to jus
     ```
     where tu (0.975) and td (0.96) are respectively the upward and the downward Fresnel transmittances across air-sea interface and n (1.34) is the refractive index of seawater (Mueller et al., 2003, Austin, 1974; Wei, 2015).
 
-On the final spectrum, an additional quality assessment is performed as in Wei et al. (2016). The score can be in the range from 0 (poorest quality) to 1 (highest quality). 
-When surface irradiance is available, an additional flag, Es_stability, is provided defining ‘good’ or ‘poor’ data depending on whether the irradiance measurements is stable during the measurement time lag: ‘good’ data show, in each channel, relative difference between maximum and minimum values of Es lower than 10%.
+
 A final flag, defining quality as ‘poor’, ‘questionable’, or ‘good’ is then assigned to each final spectrum:
-- ‘poor’ is set whenever Es is unstable, or when the score described above is lower than 0.7
-- ‘Questionable’ is set to spectra with a score below 0.8
+- ‘poor’ is set whenever Es is unstable, or if Es is not provided, when the score described above is lower than 0.7
+- ‘questionable’ is set if Es is not provided and the score is below 0.8
 
 The flag could also be forced to ‘questionable’ whenever protocols are not fully described/follow or when important ancillary data (e.g. sky conditions, wind speed) are not provided.
 For internal use, all spectra are included generating MDB files, while only ‘good’ quality spectra are included in MDBs files distributed.
