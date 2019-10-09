@@ -30,7 +30,7 @@ Any query can be saved for replicating the same search in the future (search opt
 
 ![](static/webui/save_search.png)
 
-## Contribute Data: Submissions
+## Upload Data: Submissions
 
 In this section data submission process is described.
 Only registered users are allowed to submit data. Please contact ops@eumetsat.int to be registered. Registered users after logining in can manage new and past submission in the _Submit_ page.
