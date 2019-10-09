@@ -81,7 +81,7 @@ Data gathered from other sources (e.g. Copernicus OCDB, SeaBASS) are checekd for
 
 ### Attenuation coefficient Kd
 
-Kd at 490 nm values are derived from downwelling irradiance Ed profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. 
+Kd at 490 nm kd(490) values are derived from downwelling irradiance Ed profiles as in Werdell and Bailey (2005), using the following criteria to filter out data. 
 - Only profiles with synchronous measurements of surface irradiance at 490 nm Es(490) and down-welling irradiance at 490 nm along depth z, Ed(490,z), with at least one measurement within the first 5 meters below surface are included. 
 - Es channels are considered matching Ed channels if their central wavelength differs no more than 1 nm.
 - Ed(490,z) profiles and Es(490) measurements are first obtained through resampling hyperspectral data or selecting the closest band within ±1 nm from multispectral data. 
@@ -140,14 +140,48 @@ The flag could also be forced to ‘questionable’ whenever protocols are not f
 For internal use, all spectra are included generating MDB files, while only ‘good’ quality spectra are included in MDBs files distributed.
 
 
+## Chlorophyll-a chl-a, Total suspended Matter TSM, Colored Detrital and Dissolved Material absorption adg
+
+Multiple **HPLC** or selected fluorometrically/spectrophotometrically derived chl-a, **TSM** measurements along depth are optically weighted using Kd(490) values directly estimated from chl-a/TSM/adg(443) values, as in the equation below (Morel and Maritorena, 2001). 
+Measurements and profiles are considered belonging to the same station if the time and spatial distance are below the thresholds defined in the configuration file, by default 3600 sec and 150 m (the distance is calculated from Lat/Long coordinates as Haversine distance). 
+
+```
+Equation 5: Kd(490) = 0.0166 + 0.07242 * Y^0.68955
+```
+
+and optically weighted values are thus retrieved as:
+
+```
+Equation 6: Y = [∑exp(-2*kd(z)) * Y(z)] / [∑exp(-2*kd(z))]
+```
+
+where *Y(z)* is chl-a or TSM along depth.
+Together with each value, the depth of the shallowest measurement is provided to be used for further filtering when extracting statistics from MDBs.
+
+**Adg(443)** are derived from detrital and Gebelstoff absorption profiles (ad and ag) if not adg values are directly provided. Only data collected within 30 m depth and following measurements protocols (eg. Pegau et al., 2003) are retained. Spectra are visually inspected and unreasonable data excluded.
+Hyperspectral profile are processed to remove moderate error, deriving smooth fit (Roessler et al. 1989; Werdell, 2005) as in the equation below:
+
+```
+Equation 7: ax(λ) = ax(λ0) * exp[-Sx * (λ-λ0)]
+```
+where *ax* could be ad, ag, or adg, *λ0* is 400 nm and *Sx* is adg, ag, or ad spectral shape, calculated via linear least-squares regression. In particular, *Sx* is calculated both over the ranges 380-530 nm and 380-600 nm and the fit with the higher correlation coefficient is used.
+
+Hyperspectral data are then resampled to 443 nm, with a 10 nm fwhm, while for multispectral profiles, measurements available at central wavelength within 1 nm from OLCI’s band are chosen.
+
+When multiple measurements are provided for the same station, if Kd(490) is not provided together with profiles, the shallowest value within 5 meters (or less for very turbid waters) below water surface is selected.
+
 ## References
 - Austin, R. W. (1974). The remote sensing of spectral radiance from below the ocean surface. In N. G. Jerlov, & E. S. Nielson (Eds.), Optical aspects of oceanography (pp. 317– 344). London’ Academic Press.
 - Clark, D.K., H.R. Gordon, K.J. Voss, Y. Ge, W. Broenkow, C. Trees. (1997). Validation of atmospheric correction over the oceans. Journal of Geophysical Research 102(D14): 17209-17217.
+- Pegau, S., J.R.V. Zaneveld, B.G. Mitchell, J.L. Mueller, M. Kahru, J. Wieland, and M. Stramska (2003): Ocean Optics Protocols for Satellite Ocean Color Sensor Validation, Revision 4, Volume IV: Inherent Optical Properties: Instruments, Characterizations, Field Measurements and Data Analysis Protocols. NASA Tech. Memo. 2003-211621, Rev. 4, Vol. IV, Greenbelt: NASA Goddard Space Flight Center: 76.
 - Price-Whelan et al. (2018). The Astropy Project: Building an Open-science Project and Status of the v2.0 Core Package. The Astronomical Journal 156: 123-141.
-- Thuillier, G., M. Hers´e, P. C. Simon, D. Labs, H. Mandel, D. Gillotay, & T. Foujols. (2003). The solar spectral irradiance from 200 to 2400 nm as measured by the SOLSPEC spectrometer from the ATLAS 1-2-3 and EURECA missions. Solar Physics 214: 1-22.
+- Morel, A., and S. Maritorena (2001). Bio-optical properties of oceanic waters: A reappraisal. Journal of Geophysical Research 106(C4): 7163-7180.
 - Mueller, J. L., A. Morel, R. Frouin, C. Davis, R. Arnone, K. Carder, et al. (2003). Ocean optics protocols for satellite ocean color sensor validation, revision 4, volume III: Radiometric measurements and data analysis protocols. NASA Tech. Memo. 2003-211621/Rev4-vol.III (p. 78). Greenbelt’ NASA Goddard Space Flight Center.
+- Roesler, C.S., M.J. Perry, & K.L. Carder (1989). Modeling in situ phytoplankton absorption from totalabsorption spectra in productive inland marine waters.  Limnology and Oceanography 34: 1510-1523.
+- Thuillier, G., M. Hers´e, P. C. Simon, D. Labs, H. Mandel, D. Gillotay, & T. Foujols. (2003). The solar spectral irradiance from 200 to 2400 nm as measured by the SOLSPEC spectrometer from the ATLAS 1-2-3 and EURECA missions. Solar Physics 214: 1-22.
 - Wei, J., Z. Lee, S. Shang (2016). A system to measure the data quality of spectral remote-sensing reflectance of aquatic environments Journal of Geophysics Research: Oceans 121: 8189–8207.
 - Wei, J., Z. Lee, M. Lewis, N. Pahlevan, M. Ondrusek, & R. Armstrong (2015). Radiance transmittance measured at the ocean surface. Optics Express 23: 11826-11837.
 - Werdell, P. J., & S. W. Bailey (2005). An improved bio-optical data set for ocean color algorithm development and satellite data product validation. Remote Sensing of Environment 98: 122−140.
+- Werdell, J. (2005). An evaluation of Inherent Optical Property data for inclusion in the NASA bio-Optical Marine Algorithm Data set. available at: https://seabass.gsfc.nasa.gov/wiki/NOMAD/werdell_nomad_iop_qc.pdf. Last accessed on 9/10/2019. 
 - Zibordi, G., F. Mélin, J. Berthon, B. Holben, I. Slutsker, D. Giles, D. D’Alimonte, D. Vandemark, H. Feng, G. Schuster, B.E. Fabbri, S. Kaitala, and J. Seppälä (2009). AERONET-OC: A Network for the Validation of Ocean Color Primary Products. J. Atmos. Oceanic Technol. 26: 1634–1651.
 
