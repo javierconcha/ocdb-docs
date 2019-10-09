@@ -51,13 +51,15 @@ Drag and Copy or Select measurement files and documentation in the dedicated win
 Click on _SUBMIT_ to initiate the validation process.
 Files containing measurements are immediately automatically checked according to [validation rules](ocdb-validation-config.md)
 Click on _List Files_ available among _Actions_ tools to see the results of the validation, shown for each file.
+In case of errors, the status of the submission is set to _SUBMITTED_. Submissions containing errors are not further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
+
+![](static/webui/submission.png)
+
+In case of errors or warnings, for each file, click on _List Import Issues_ ![](static/webui/list.png) to show the list of error and warning messages.
 
 ![](static/webui/list_ex.png)
 
-In case of errors or warnings, for each file, click on _List Import Issues_ ![](static/webui/list.png) to show the list of error and warning messages.
 Single files can be thus downloaded ![](static/webui/download.png) and re-uploaded ![](static/webui/upload.png) and validated again.
-
-In case of errors, the status of the submission is set to _SUBMITTED_. Submissions containing errors are not further procesed into the Database. If you need assistance, please contact ops@eumetsat.int indicating the identifier (_Submission label_) of the submission. 
 
 If the validation succeeds, the status of the submission is set to _VALIDATED_ and further processed by Database administrators.
 
