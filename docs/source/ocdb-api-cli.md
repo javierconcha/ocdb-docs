@@ -368,14 +368,14 @@ status**. Do not use this feature to download data, instead use the "get_dataset
 
 cli:
 ```bash
-ocdb-cli sbmfile download --submission_id IOPstudy2 --index <index> [--out-file IOPstudy2.zip]
+ocdb-cli sbmfile download -s <submission_label> --index <index> [--out-file <file_name>]
 ```
 
 By default files are downloaded as 'download.zip'
 
 python
 ```python
-api.download_submission_file('IOPstudy2', 0, out_fn = IOPstudy2.zip)
+api.download_submission_file(<submission_label>,<index>, out_fn =  <file_name>)
 ```
 
 
