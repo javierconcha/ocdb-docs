@@ -166,9 +166,11 @@ Equation 7: ax(λ) = ax(λ0) * exp[-Sx * (λ-λ0)]
 ```
 where *ax* could be ad, ag, or adg, *λ0* is 400 nm and *Sx* is adg, ag, or ad spectral shape, calculated via linear least-squares regression. In particular, *Sx* is calculated both over the ranges 380-530 nm and 380-600 nm and the fit with the higher correlation coefficient is used.
 
+*ax* values at single wavelength ar then discarded when the ratio between actual and fitted value is lower than 0.5 or gigher than 2.
+
 Hyperspectral data are then resampled to 443 nm, with a 10 nm fwhm, while for multispectral profiles, measurements available at central wavelength within 1 nm from OLCI’s band are chosen.
 
-When multiple measurements are provided for the same station, if Kd(490) is not provided together with profiles, the shallowest value within 5 meters (or less for very turbid waters) below water surface is selected.
+Finally, when multiple measurements are provided for the same station, if Kd(490) is not provided together with profiles, the shallowest value within 5 meters (or less for very turbid waters) below water surface is selected.
 
 ## References
 - Austin, R. W. (1974). The remote sensing of spectral radiance from below the ocean surface. In N. G. Jerlov, & E. S. Nielson (Eds.), Optical aspects of oceanography (pp. 317– 344). London’ Academic Press.
