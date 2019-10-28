@@ -392,7 +392,7 @@ ocdb-cli sbmfile add --submission-id <submission_label> --file <local_file_path>
 
 python
 ```python
-api.upload_submission_file(<submission_label>,<local_file>,<type>)
+api.add_submission_file(<submission_label>,<local_file>,<type>)
 ```
 where _type_ could be 'MEASUREMENT' or 'DOCUMENT'
 
@@ -406,7 +406,7 @@ ocdb-cli sbmfile update --submission-id <submission_label> --file <local_file_pa
 
 python
 ```python
-api.upload_submission_file(<submission_label>,<local_file>,<type>,<index>)
+api.update_submission_file(<submission_label>,<local_file>,<index>)
 ```
 
 where *index* is the index of the file in the submission to be updated.
