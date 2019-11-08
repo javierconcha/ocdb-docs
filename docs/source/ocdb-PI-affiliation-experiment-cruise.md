@@ -2,16 +2,24 @@ Below, affiliations, experimetns, cruises and investigators already present in t
 
 ## Affiliations
 - Alfred-Wegener-Institute_Helmholtz_Centre_for_Polar_and_Marine_Research (AWI)
+- Eidgenossische_Anstalt_fur_Wasserversorgung_Abwasserreinigung_und_Gewasserschutz (Eawag)
+- Laboratoire_d_Oceanologie_et_de_Geosciences (LOG)
 
 ## Experiments
-- SO
-- ANT
+- FRontiers in Arctic marine Monitoring (FRAM)
+- North_Sea_transect
+
 
 ## Cruises
-- SO243
-- SO235
-- SO234
 - ANT-XXVII-2
+- HE462
+- PS106
+- SO234
+- SO235
+- SO243
+
 
 ## Investigators
-- Astrid Bracher (Astrid_Bracher)
+- Bracher Astrid (Astrid_Bracher)
+- Loisel Hubert (Hubert_Loisel)
+- Odermatt Daniel (Daniel_Odermatt)
