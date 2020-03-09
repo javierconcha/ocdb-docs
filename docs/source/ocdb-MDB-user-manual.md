@@ -3,9 +3,9 @@ Matchups Database (MDB) netCDF files, including matchups between OLCI and _in si
 
 MDB files are provided through FTP, directly accesible from the Copernicus OCDB webpage.
 
-For AERONET-OC and MOBY they are organised by month and updated at least on a monthly basis.
+For AERONET-OC and MOBY they are organised by site and updated on a monthly basis. Please refer to MDB attributes 'creation_date' and 'version'  to check which is the latest version available (only the latest version is available at FTP site).
 
-For _in-situ_ data downloaded from OCDB or SeaBASS, they are organised by products and updated on a monthly basis as well.
+For _in-situ_ data downloaded from OCDB or SeaBASS, they are organised by products.
 
 A short description of the content as well as the format follows.
 
@@ -34,14 +34,13 @@ For baseline validations, the **recommended matchup protocols** should be follow
 
 ## MDB files naming convention
 Each MDB file is named using the following template:
-MDB [PLATFORM] [LEVEL] [TYPE] [startDate] [endDate].nc
+MDB [SATELLITE] [SENSOR] [LEVEL] [TYPE] [SITE].nc
 where:
-- PLATFORM indicates satellite: A or B
+- SATELLITE: S3A or S3B
+- SENSOR: OLCI
 - LEVEL indicates OLCI products level: 'L1' for EFR products or 'L2' for WFR products
-- TYPE indicates _in-situ_ data type: 'AERONET_version3', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
-- [startDate]_[endDate] indicates the time range covered by the file
-
-For example, MDB_A_L2_AERONET_version3_20160401_20160430.nc includes all matchups for AERONET-OC (version 3) for April 2016, with OLCI-A Level-2 products.
+- TYPE indicates _in-situ_ data type: 'AERONET', 'MOBY', 'HPLC' (for chlorophyll HPLC measurements only), 'KD490', 'TSM', 'ADG', or CHL (for fluorometrically/spectrophotometrically derived chl-a) 
+- SITE (for AERONET-OC MDB only) indicates AERONET-OC site
 
 ## MDB files preparation
 Monthly, MDB files are genereted through a Python module (called MDB_Builder).
